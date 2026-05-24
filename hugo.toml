@@ -1,4 +1,4 @@
-baseURL = 'https://xufanchn.github.io/blog-hugo/'
+baseURL = 'https://xufanchn.github.io/blog/'
 languageCode = 'zh-CN'
 title = "xf / blog"
 theme = 'PaperMod'

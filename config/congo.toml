@@ -1,0 +1,48 @@
+theme = 'congo'
+
+enableRobotsTXT = true
+summaryLength = 0
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  colorScheme = "congo"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+
+  [params.header]
+    layout = "basic"
+    showTitle = true
+
+  [params.footer]
+    showCopyright = true
+    showThemeAttribution = true
+
+  [params.homepage]
+    layout = "page"
+
+  [params.article]
+    showDate = true
+    showReadingTime = true
+    showTableOfContents = true
+
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/xufanchn"
+  weight = 3

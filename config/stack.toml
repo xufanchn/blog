@@ -1,0 +1,47 @@
+theme = 'hugo-theme-stack'
+
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  mainSections = ["posts"]
+  rssFullContent = true
+
+  [params.footer]
+    since = 2026
+
+  [params.sidebar]
+    compact = false
+
+  [params.article]
+    toc = true
+    readingTime = true
+    headingAnchor = false
+    math = false
+
+    [params.article.list]
+      showTags = false
+
+  [params.dateFormat]
+    published = ":date_full"
+    lastUpdated = ":date_full"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "GitHub"
+  url = "https://github.com/xufanchn"
+  weight = 3

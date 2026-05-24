@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  ACTIVE_THEME: hugoplate
+  ACTIVE_THEME: doks
 
 jobs:
   build:

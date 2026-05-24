@@ -36,6 +36,7 @@ jobs:
           rm -rf content/posts/*
           mkdir -p content/posts
           cp blog-content/posts/*.md content/posts/
+          rm -rf blog-content
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3

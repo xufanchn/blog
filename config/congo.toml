@@ -41,6 +41,15 @@ summaryLength = 0
     showAppearanceSwitcher = true
     showScrollToTop = true
 
+  [params.author]
+    image = "img/author.svg"
+    name = "xufanchn"
+    headline = "代码 · 运维 · 思考"
+    bio = "记录技术路上的点滴"
+    links = [
+      { github = "https://github.com/xufanchn" },
+    ]
+
   [params.homepage]
     layout = "custom"
     showRecent = true

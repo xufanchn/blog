@@ -16,6 +16,8 @@ summaryLength = 0
   enableSearch = true
   enableCodeCopy = true
   enableImageLazyLoading = true
+  enableImageWebp = true
+  showScrollToTop = true
 
   [params.header]
     layout = "basic"
@@ -27,28 +29,53 @@ summaryLength = 0
 
   [params.homepage]
     layout = "profile"
+    showRecent = true
+    showRecentTitle = "最新文章"
+    showMoreLink = true
+    showMoreLinkDest = "/posts/"
+    showMoreLinkLabel = "查看更多 →"
+    cardView = false
+    cardViewScreenWidth = false
 
   [params.author]
     name = "xufanchn"
     bio = "代码 · 运维 · 思考 —— 记录技术路上的点滴"
+    image = ""
+    headline = "欢迎来到我的博客"
     links = [
       { github = "https://github.com/xufanchn" },
     ]
 
   [params.article]
     showDate = true
-    showReadingTime = true
-    showTableOfContents = true
+    showDateUpdated = false
     showAuthor = false
+    showReadingTime = true
+    showDraftLabel = true
+    showEdit = false
+    editURL = ""
+    showTableOfContents = true
     showWordCount = false
+    showTaxonomies = true
+    showBreadcrumbs = false
+    sharingLinks = []
 
   [params.list]
     showBreadcrumbs = true
     showSummary = true
+    showViews = false
+    showLikes = false
     showTableOfContents = false
+    showCards = false
 
     [params.list.groupByYear]
       enabled = true
+
+  [params.sitemap]
+    enabled = true
+
+  [params.taxonomy]
+    showTermCount = true
 
 [[menu.main]]
   name = "首页"
@@ -61,6 +88,11 @@ summaryLength = 0
   weight = 2
 
 [[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
   name = "GitHub"
   url = "https://github.com/xufanchn"
-  weight = 3
+  weight = 4

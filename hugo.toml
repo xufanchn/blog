@@ -1,41 +1,41 @@
 baseURL = 'https://xufanchn.github.io/blog/'
 languageCode = 'zh-CN'
 title = "xf / blog"
-theme = 'PaperMod'
+theme = 'paper'
+
+enableInlineShortcodes = true
+ignoreErrors = ["error-remote-getjson"]
+
+[pagination]
+  pagerSize = 5
 
 [params]
-  description = '代码 · 运维 · 思考 —— 记录技术路上的点滴'
-  author = 'xufanchn'
-  defaultTheme = 'auto'
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
-  TocOpen = true
+  color = 'linen'
+  github = 'xufanchn'
+  name = 'xufanchn'
+  bio = '代码 · 运维 · 思考'
 
-  [params.homeInfoParams]
-    Title = "xf / blog"
-    Content = '代码 · 运维 · 思考 —— 记录技术路上的点滴'
+[menu]
 
-  [params.profileMode]
-    enabled = false
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
 
-[[menu.main]]
-  name = '首页'
-  url = '/'
-  weight = 1
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 20
 
-[[menu.main]]
-  name = '文章'
-  url = '/posts/'
-  weight = 2
+  [[menu.main]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/xufanchn"
+    weight = 30
 
-[[menu.main]]
-  name = 'GitHub'
-  url = 'https://github.com/xufanchn'
-  weight = 3
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

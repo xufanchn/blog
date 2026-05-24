@@ -2,51 +2,50 @@
 title: "Front Matter"
 date: 2020-08-12
 draft: false
-description: "All the front matter variables available in Congo."
-summary: "While supporting most Hugo defaults, Congo adds a number of front matter parameters to customise the presentation of individual articles."
+description: "Congo中可用的所有Front Matter 变量。"
+summary: "虽然支持大多数 Hugo 默认值，但 Congo 添加了许多前置参数，以定制单个文章的呈现方式。"
 slug: "front-matter"
 tags: ["front matter", "config", "docs"]
 ---
 
-In addition to the [default Hugo front matter parameters](https://gohugo.io/content-management/front-matter/#front-matter-variables), Congo adds a number of additional options to customise the presentation of individual articles. All the available theme front matter parameters are listed below.
+除了[默认 Hugo 的Front Matter变量](https://gohugo.io/content-management/front-matter/#front-matter-variables)之外，Congo 添加了许多额外的选项，以定制单个文章的呈现方式。以下是所有可用的主题前置变量参数。
 
-Front matter parameter default values are inherited from the theme's [base configuration]({{< ref "configuration" >}}), so you only need to specify these parameters in your front matter when you want to override the default.
+Front Matter参数的默认值是从主题的[基础配置]({{< ref "configuration" >}})中继承的，因此只有在要覆盖默认值时才需要在Front Matter变量中指定这些参数。
 
 <!-- prettier-ignore-start -->
 |Name|Default|Description|
 |---|---|---|
-|`title`|_Not set_|The name of the article.|
-|`description`|_Not set_|The text description for the article. It is used in the HTML metadata.|
-|`feature`|`"*feature*"`|The text pattern to match the feature image filename for this article.|
-|`featureAlt`|`""`|The alternative text description for the feature image.|
-|`cover`|`"*cover*"`|The text pattern to match the cover image filename for this article.|
-|`coverAlt`|`featureAlt`|The alternative text description for the cover image.|
-|`coverCaption`|_Not set_|The figure caption text to be displayed beneath the cover image.|
-|`thumbnail`|`"*thumb*"`_|The text pattern to match the thumbnail image filename for this article.|
-|`thumbnailAlt`|`featureAlt`|The alternative text description for the thumbnail image.|
-|`externalUrl`|_Not set_|If this article is published on a third-party website, the URL to this article. Providing a URL will prevent a content page being generated and any references to this article will link directly to the third-party website.|
-|`canonicalUrl`|`.Permalink`|When set, this overrides the canonical URL metadata for the article.|
-|`editURL`|`article.editURL`|When `showEdit` is active, the URL for the edit link.|
-|`editAppendPath`|`article.editAppendPath`|When `showEdit` is active, whether or not the path to the current article should be appended to the URL set at `editURL`.|
-|`groupByYear`|`list.groupByYear`|Whether or not articles are grouped by year on list pages.|
-|`keywords`|_Not set_|Any keywords that should be included in the article metadata.|
-|`menu`|_Not set_|When a value is provided, a link to this article will appear in the named menus. Valid values are `main` or `footer`.|
-|`robots`|_Not set_|String that indicates how robots should handle this article. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.|
-|`sharingLinks`|`article.sharingLinks`|Which sharing links to display at the end of this article. When not provided, or set to `false` no links will be displayed.|
-|`showAuthor`|`article.showAuthor`|Whether or not the author box is displayed in the article footer.|
-|`showBreadcrumbs`|`article.showBreadcrumbs` or `list.showBreadcrumbs`|Whether the breadcrumbs are displayed in the article or list header.|
-|`showDate`|`article.showDate`|Whether or not the article date is displayed. The date is set using the `date` parameter.|
-|`showDateUpdated`|`article.showDateUpdated`|Whether or not the date the article was updated is displayed. The date is set using the `lastmod` parameter.|
-|`showEdit`|`article.showEdit`|Whether or not the link to edit the article content should be displayed.|
-|`showHeadingAnchors`|`article.showHeadingAnchors`|Whether or not heading anchor links are displayed alongside headings within this article.|
-|`showPagination`|`article.showPagination`|Whether or not the next/previous article links are displayed in the article footer.|
-|`invertPagination`|`article.invertPagination`|Whether or not to flip the direction of the next/previous article links.|
-|`showReadingTime`|`article.showReadingTime`|Whether or not the article reading time is displayed.|
-|`showTaxonomies`|`article.showTaxonomies`|Whether or not the taxonomies that relate to this article are displayed.|
-|`showTableOfContents`|`article.showTableOfContents`|Whether or not the table of contents is displayed on this article.|
-|`showWordCount`|`article.showWordCount`|Whether or not the article word count is displayed.|
-|`showComments`|`article.showComments`|Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.|
-|`showSummary`|`list.showSummary`|Whether or not the article summary should be displayed on list pages.|
-|`summary`|Auto generated using `summaryLength` (see [site configuration]({{< ref "configuration#site-configuration" >}}))|When `showSummary` is enabled, this is the Markdown string to be used as the summary for this article.|
-|`xml`|`true` unless excluded by `sitemap.excludedKinds`|Whether or not this article is included in the generated `/sitemap.xml` file.|
+|`title`|_未设置_|文章的标题。|
+|`description`|_未设置_|文章的文本描述。用于 HTML 元数据。|
+|`feature`|`"*feature*"`|用于匹配此文章的feature图片文件名的文本模式。|
+|`featureAlt`|`""`|feature图片的替代文本描述。|
+|`cover`|`"*cover*"`|用于匹配此文章的封面图片文件名的文本模式。|
+|`coverAlt`|`featureAlt`|封面图片的替代文本描述。|
+|`coverCaption`|_未设置_|在封面图片下方显示的图注文本。|
+|`thumbnail`|`"*thumb*"`_|用于匹配此文章的缩略图图片文件名的文本模式。|
+|`thumbnailAlt`|`featureAlt`|缩略图图片的替代文本描述。|
+|`externalUrl`|_未设置_|如果此文章发表在第三方网站上，则为此文章的 URL。提供 URL 将阻止生成内容页面，并且对此文章的任何引用将直接链接到第三方网站。|
+|`editURL`|`article.editURL`|当 `showEdit` 激活时，编辑链接的 URL。|
+|`editAppendPath`|`article.editAppendPath`|当 `showEdit` 激活时，是否将当前文章的路径附加到 `editURL` 设置的 URL。|
+|`groupByYear`|`list.groupByYear`|文章在列表页面上是否按年份分组。|
+|`keywords`|_未设置_|应包含在文章元数据中的任何关键字。|
+|`menu`|_未设置_|提供数值时，此文章的链接将出现在指定的菜单中。有效值为 `main` 或 `footer`。|
+|`robots`|_未设置_|指示爬虫机器人如何处理此文章的字符串。如果设置，它将输出到页面头部。参考[Google文档](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)获取有效值。|
+|`sharingLinks`|`article.sharingLinks`|在文章末尾显示哪些分享链接。如果未提供或设置为 `false`，则不显示任何链接。|
+|`showAuthor`|`article.showAuthor`|是否在文章页脚显示作者框。|
+|`showBreadcrumbs`|`article.showBreadcrumbs` 或 `list.showBreadcrumbs`|是否在文章或列表页眉中显示面包屑。|
+|`showDate`|`article.showDate`|是否显示文章日期。日期使用 `date` 参数设置。|
+|`showDateUpdated`|`article.showDateUpdated`|是否显示文章的更新日期。日期使用 `lastmod` 参数设置。|
+|`showEdit`|`article.showEdit`|是否显示编辑文章内容的链接。|
+|`showHeadingAnchors`|`article.showHeadingAnchors`|是否在文章中的标题旁边显示标题锚链接。|
+|`showPagination`|`article.showPagination`|是否在文章页脚显示下一篇/上一篇文章的链接。|
+|`invertPagination`|`article.invertPagination`|是否翻转下一篇/上一篇文章链接的方向。|
+|`showReadingTime`|`article.showReadingTime`|是否显示文章的阅读时间。|
+|`showTaxonomies`|`article.showTaxonomies`|是否显示与此文章相关的分类法。|
+|`showTableOfContents`|`article.showTableOfContents`|是否在文章中显示目录。|
+|`showWordCount`|`article.showWordCount`|是否显示文章的字数统计。|
+|`showComments`|`article.showComments`|是否在文章页脚后包含[评论部分]({{< ref "partials#comments" >}})。|
+|`showSummary`|`list.showSummary`|是否在列表页上显示文章摘要。|
+|`summary`|使用 `summaryLength` 自动生成（参见[站点配置]({{< ref "configuration#site-configuration" >}})）|当启用 `showSummary` 时，用作此文章摘要的 Markdown 字符串。|
+|`xml`|`true`，除非被 `sitemap.excludedKinds` 排除|此文章是否包含在生成的 `/sitemap.xml` 文件中。|
 <!-- prettier-ignore-end -->

@@ -1,72 +1,72 @@
 ---
-title: "Shortcodes"
+title: "短代码"
 date: 2020-08-11
 draft: false
-description: "All the shortcodes available in Congo."
-summary: Congo includes several shortcodes for adding rich content to articles including images, charts, diagrams, buttons and more.
+description: "Congo提供的所有短代码"
+summary: Congo提供了多个短代码，可用于向文章添加丰富的内容，包括图像、图表、图表、按钮等。
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 ---
 
-In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Congo adds a few extras for additional functionality.
+除了[默认的 Hugo 短代码](https://gohugo.io/content-management/shortcodes/)外，Congo 还额外添加了一些功能。
 
 ## Alert
 
-`alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
+`alert`以样式化的消息框形式输出其内容在文章中。它对于引起读者注意的重要信息很有用。
 
-The input is written in Markdown so you can format it however you please.
+输入是用Markdown编写的，因此您可以按照自己的喜好进行格式化。
 
-By default, the alert is presented with an exclamation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
+默认情况下，警报将以感叹号三角形图标的形式呈现。要更改图标，请在短代码中包含图标名称。有关使用图标的更多详细信息，请查看[图标短代码](#icon)。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* alert */>}}
-**Warning!** This action is destructive!
+**警告！** 这个操作是破坏性的！
 {{</* /alert */>}}
 
-{{</* alert "x-twitter" */>}}
-Don't forget to [follow me](https://x.com/jpanther) on X.
+{{</* alert "twitter" */>}}
+别忘了在Twitter上[关注我](https://twitter.com/jpanther)。
 {{</* /alert */>}}
 ```
 
 {{< alert >}}
-**Warning!** This action is destructive!
+**警告！** 这个操作是破坏性的！
 {{< /alert >}}
 &nbsp;
-{{< alert "x-twitter" >}}
-Don't forget to [follow me](https://x.com/jpanther) on X.
+{{< alert "twitter" >}}
+别忘了在Twitter上[关注我](https://twitter.com/jpanther)。
 {{< /alert >}}
 
 ## Badge
 
-`badge` outputs a styled badge component which is useful for displaying metadata.
+`badge`输出一个带有样式的徽章组件，用于显示元数据。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* badge */>}}
-New article!
+新文章！
 {{</* /badge */>}}
 ```
 
 {{< badge >}}
-New article!
+新文章！
 {{< /badge >}}
 
 ## Button
 
-`button` outputs a styled button component which can be used to highlight a primary action. It has three optional parameters:
+`button` 输出一个样式化的按钮组件，用于突出显示主要操作。它有三个可选参数：
 
 <!-- prettier-ignore-start -->
-|Parameter|Description|
+|参数|描述|
 |---|---|
-|`href`|The URL that the button should link to.|
-|`target`|The target of the link.|
-|`download`|Whether browser should download the resource rather than navigate to the URL. The value of this parameter will be the name of the downloaded file.|
+|`href`|按钮应链接到的 URL。|
+|`target`|链接的目标。|
+|`download`|浏览器是否应下载资源而不是导航到 URL。此参数的值将是下载文件的名称。|
 <!-- prettier-ignore-end -->
 
-**Example:**
+**示例:**
 
 ```md
 {{</* button href="#button" target="_self" */>}}
@@ -80,11 +80,11 @@ Call to action
 
 ## Chart
 
-`chart` uses the Chart.js library to embed charts into articles using simple structured data. It supports a number of [different chart styles](https://www.chartjs.org/docs/latest/samples/) and everything can be configured from within the shortcode. Simply provide the chart parameters between the shortcode tags and Chart.js will do the rest.
+`chart` 使用 Chart.js 库通过简单的结构化数据嵌入图表到文章中。它支持多种[不同的图表样式](https://www.chartjs.org/docs/latest/samples/)，并且一切都可以通过短代码内部进行配置。只需在短代码标签之间提供图表参数，Chart.js 将完成其余工作。
 
-Refer to the [official Chart.js docs](https://www.chartjs.org/docs/latest/general/) for details on syntax and supported chart types.
+有关语法和支持的图表类型的详细信息，请参阅[官方 Chart.js 文档](https://www.chartjs.org/docs/latest/general/)。
 
-**Example:**
+**示例:**
 
 ```js
 {{</* chart */>}}
@@ -112,88 +112,76 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-You can see some additional Chart.js examples on the [charts samples]({{< ref "charts" >}}) page.
+你可以在 [图表示例]({{< ref "charts" >}}) 页面看到一些额外的 Chart.js 示例。
 
 ## Figure
 
-Congo includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
+Congo 包含一个 `figure` 短代码，用于向内容添加图片。该短代码替代了基本的 Hugo 功能，以提供额外的性能优势。
 
-When a provided image is a page resource, it will be optimised using Hugo Pipes and scaled in order to provide images appropriate to different device resolutions. If a static asset or URL to an external image is provided, it will be included as-is without any image processing by Hugo.
+当提供的图像是页面资源时，它将使用 Hugo Pipes 进行优化，并进行缩放，以提供适用于不同设备分辨率的图像。如果提供的是静态资源或指向外部图像的 URL，则将其原样包含，Hugo 不会对其进行任何图像处理。
 
-The `figure` shortcode accepts six parameters:
+`figure` 短代码接受六个参数：
 
 <!-- prettier-ignore-start -->
-|Parameter|Description|
+|参数|描述|
 |---|---|
-|`src`| **Required.** The local path/filename or URL of the image. When providing a path and filename, the theme will attempt to locate the image using the following lookup order: Firstly, as a [page resource](https://gohugo.io/content-management/page-resources/) bundled with the page; then an asset in the `assets/` directory; then finally, a static image in the `static/` directory.|
-|`alt`|[Alternative text description](https://moz.com/learn/seo/alt-text) for the image.|
-|`caption`|Markdown for the image caption, which will be displayed below the image.|
-|`class`|Additional CSS classes to apply to the image.|
-|`href`|URL that the image should be linked to.|
-|`default`|Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).|
+|`src`| **必需。** 图像的本地路径/文件名或 URL。当提供路径和文件名时，主题将尝试使用以下查找顺序定位图像：首先，作为[页面资源](https://gohugo.io/content-management/page-resources/)与页面捆绑；然后是 `assets/` 目录中的资源；最后是 `static/` 目录中的静态图像。|
+|`alt`|图像的[替代文本描述](https://moz.com/learn/seo/alt-text)。|
+|`caption`|图像说明的 Markdown，将显示在图像下方。|
+|`class`|应用于图像的额外 CSS 类。|
+|`href`|图像应链接到的 URL。|
+|`default`|特殊参数，用于恢复默认的 Hugo `figure` 行为。只需提供 `default=true`，然后使用正常的[Hugo 短代码语法](https://gohugo.io/content-management/shortcodes/#figure)。|
 <!-- prettier-ignore-end -->
 
-Congo also supports automatic conversion of images included using standard Markdown syntax. Simply use the following format and the theme will handle the rest:
+Congo 还支持使用标准 Markdown 语法包含的图像的自动转换。只需使用以下格式，主题将处理其余部分：
 
 ```md
 ![Alt text](image.jpg "Image caption")
 ```
 
-**Example:**
+**示例:**
 
 ```md
 {{</* figure
     src="abstract.jpg"
-    alt="Abstract purple artwork"
-    caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)"
+    alt="抽象紫色艺术品"
+    caption="照片由[Jr Korpa](https://unsplash.com/@jrkorpa)拍摄，来自[Unsplash](https://unsplash.com/)"
     */>}}
 
-<!-- OR -->
+<!-- 或 -->
 
-![Abstract purple artwork](abstract.jpg "Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)")
+![抽象紫色艺术品](abstract.jpg "照片由[Jr Korpa](https://unsplash.com/@jrkorpa)拍摄，来自[Unsplash](https://unsplash.com/)")
 ```
 
-{{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
-
-## Gist
-
-The `gist` shortcode can be used to embed a GitHub Gist. It requires two unnamed parameters: the username and ID of the Gist.
-
-**Example:**
-
-```md
-{{</* jpanther 26292111fe1eb8e31c60f6dbfef9df28 */>}}
-```
-
-{{< gist jpanther 26292111fe1eb8e31c60f6dbfef9df28 >}}
+{{< figure src="abstract.jpg" alt="抽象紫色艺术品" caption="照片由[Jr Korpa](https://unsplash.com/@jrkorpa)拍摄，来自[Unsplash](https://unsplash.com/)" >}}
 
 ## Icon
 
-`icon` outputs an SVG icon and takes the icon name as its only parameter. The icon is scaled to match the current text size.
+`icon` 输出一个 SVG 图标，并将图标名称作为其唯一参数。图标的大小会根据当前文本大小进行缩放。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* icon "github" */>}}
 ```
 
-**Output:** {{< icon "github" >}}
+**输出:** {{< icon "github" >}}
 
-Icons are populated using Hugo pipelines which makes them very flexible. Congo includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
+图标是使用 Hugo 管道填充的，这使它们非常灵活。Congo 包含许多用于社交、链接和其他用途的内置图标。请查看 [图标示例]({{< ref "samples/icons" >}}) 页面以获取支持的图标的完整列表。
 
-Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
+通过在项目的 `assets/icons/` 目录中提供自己的图标资产，可以添加自定义图标。然后，可以通过在短代码中使用不带 `.svg` 扩展名的 SVG 文件名来引用图标。
 
-Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
+图标还可以通过调用 [图标部分]({{< ref "partials#icon" >}}) 在局部中使用。
 
 ## Katex
 
-The `katex` shortcode can be used to add mathematical expressions to article content using the KaTeX package. Refer to the online reference of [supported TeX functions](https://katex.org/docs/supported.html) for the available syntax.
+`katex` 短代码可用于使用 KaTeX 包向文章内容添加数学表达式。有关可用语法，请参阅[支持的 TeX 函数](https://katex.org/docs/supported.html)的在线参考。
 
-To include mathematical expressions in an article, simply place the shortcode anywhere with the content. It only needs to be included once per article and KaTeX will automatically render any markup on that page. Both inline and block notation are supported.
+要在文章中包含数学表达式，只需在内容中的任何位置放置短代码。它只需要在每篇文章中包含一次，KaTeX 将自动呈现页面上的任何标记。支持行内和块表示法。
 
-Inline notation can be generated by wrapping the expression in `\(` and `\)` delimiters. Alternatively, block notation can be generated using `$$` delimiters.
+可以通过将表达式包装在 `\(` 和 `\)` 定界符中来生成行内表示法。或者，可以使用 `$$` 定界符生成块表示法。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* katex */>}}
@@ -203,33 +191,33 @@ Inline notation can be generated by wrapping the expression in `\(` and `\)` del
 {{< katex >}}
 \(f(a,b,c) = (a^2+b^2+c^2)^3\)
 
-Check out the [mathematical notation samples]({{< ref "mathematical-notation" >}}) page for more examples.
+查看 [数学符号示例]({{< ref "mathematical-notation" >}}) 页面以获取更多示例。
 
 ## Lead
 
-`lead` is used to bring emphasis to the start of an article. It can be used to style an introduction, or to call out an important piece of information. Simply wrap any Markdown content in the `lead` shortcode.
+`lead` 用于突出显示文章开头的内容。它可用于设计引言，或者强调重要信息。只需将任何 Markdown 内容包装在 `lead` 短代码中即可。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* lead */>}}
-When life gives you lemons, make lemonade.
+当生活给你柠檬时，做柠檬水。
 {{</* /lead */>}}
 ```
 
 {{< lead >}}
-When life gives you lemons, make lemonade.
+当生活给你柠檬时，做柠檬水。
 {{< /lead >}}
 
 ## Mermaid
 
-`mermaid` allows you to draw detailed diagrams and visualisations using text. It uses Mermaid under the hood and supports a wide variety of diagrams, charts and other output formats.
+`mermaid` 允许您使用文本绘制详细的图表和可视化效果。它在幕后使用 Mermaid，并支持各种图表、图表和其他输出格式。
 
-Simply write your Mermaid syntax within the `mermaid` shortcode and let the plugin do the rest.
+只需在 `mermaid` 短代码中编写您的 Mermaid 语法，然后让插件处理剩下的工作。
 
-Refer to the [official Mermaid docs](https://mermaid-js.github.io/) for details on syntax and supported diagram types.
+有关语法和支持的图表类型的详细信息，请参阅 [官方 Mermaid 文档](https://mermaid-js.github.io/)。
 
-**Example:**
+**示例:**
 
 ```md
 {{</* mermaid */>}}
@@ -245,24 +233,4 @@ A[Lemons]-->B[Lemonade];
 B-->C[Profit]
 {{< /mermaid >}}
 
-You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
-
-## Profile
-
-The `profile` shortcode inserts a block displaying the site author's details. The same template is used on Congo's homepage layouts, but can also be inserted in any article content. It has one optional parameter:
-
-<!-- prettier-ignore-start -->
-|Parameter|Description|
-|---|---|
-|`align`|The alignment of the profile elements - valid options include `start`, `center` and `end`. If no value is provided, the `center` alignment will be used.|
-<!-- prettier-ignore-end -->
-
-The template is populated using the author parameters set in the [Language Configuration]({{< ref "configuration#configuration" >}}).
-
-**Example:**
-
-```md
-{{</* profile align="center" */>}}
-```
-
-{{< profile align="center" >}}
+您可以在 [图表和流程图示例]({{< ref "diagrams-flowcharts" >}}) 页面上看到一些额外的 Mermaid 示例。

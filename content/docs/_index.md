@@ -1,6 +1,6 @@
 ---
-title: "Documentation"
-description: "Learn how to use Congo and its features."
+title: "文档"
+description: "了解如何使用Congo及其功能。"
 
 cascade:
   showDate: false
@@ -10,13 +10,13 @@ cascade:
 ---
 
 {{< lead >}}
-Simple, yet powerful. Learn how to use Congo and its features.
+简单而强大。了解如何使用Congo及其功能。
 {{< /lead >}}
 
 ![Screenshots of Congo on an iPhone, iPad and MacBook](screenshot.png)
 
-This section contains everything you need to know about Congo. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Congo can do.
+该部分包含关于Congo的所有必要信息。如果您是新手，请查看 [安装]({{< ref "docs/installation" >}}) 指南以开始，或访问 [示例]({{< ref "samples" >}}) 部分查看Congo的功能。
 
-_Special thanks to [Katerina Limpitsouni](https://ninalimpi.com) for the excellent illustrations that are used throughout these docs!_
+特别感谢 [Katerina Limpitsouni](https://ninalimpi.com) 为这些文档中使用的出色插图！
 
 ---

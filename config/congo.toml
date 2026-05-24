@@ -1,6 +1,6 @@
 theme = 'congo'
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh-Hans"
 enableRobotsTXT = true
 summaryLength = 0
 

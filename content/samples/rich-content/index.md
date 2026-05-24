@@ -1,35 +1,23 @@
 ---
-title: "Rich Content"
+title: "富文本"
 date: 2019-03-10
-description: "A brief description of Rich Content"
-summary: "This is an _example_ of a **rich** content summary."
-coverAlt: "An example cover image depicting icons of some popular media organisations."
-coverCaption: "This is an example cover image with a caption."
+description: "富文本的简介"
+summary: "这是一个 _富_ 文本的 _简介_ "
+coverAlt: "一个示例封面图片，描绘了一些知名媒体机构的图标。"
+coverCaption: "这是一个带有说明的封面图片示例。"
 tags: ["shortcodes", "privacy", "sample", "gist", "twitter", "youtube", "vimeo"]
 ---
 
-Hugo ships with several [built-in shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) for rich content, along with a [privacy config](https://gohugo.io/about/hugo-and-gdpr/) and a set of _simple shortcodes_ that enable static and no-JS versions of various social media embeds.
+Hugo包含了多个[内置短代码](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)以支持丰富的内容，同时还提供了[隐私配置](https://gohugo.io/about/hugo-and-gdpr/)和一组 _简单短代码_，用于启用各种社交媒体嵌入的静态和无JS版本。
 
 ## YouTube
 
-Below is an example using the built-in `youtube` shortcode. It requires only the video ID.
+以下是使用内置的 `youtube` 短代码的示例。
 
 {{< youtube ZJthWmvUzzc >}}
 
-## X (formerly Twitter)
-
-This example uses the `x` shortcode to output a Tweet. It requires two named parameters `user` and `id`.
-
-{{< x user="DesignReviewed" id="1085870671291310081" >}}
-
-## Instagram
-
-The `instagram` shortcode will embed an Instagram post. It requires only the post ID.
-
-{{< instagram CxOWiQNP2MO >}}
-
 ## Vimeo
 
-The `vimeo` shortcode will embed a Vimeo video. It requires only the video ID.
+`vimeo_simple` 短代码将嵌入Vimeo视频。
 
-{{< vimeo 48912912 >}}
+{{< vimeo_simple 48912912 >}}

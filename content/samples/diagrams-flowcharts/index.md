@@ -1,18 +1,18 @@
 ---
-title: "Diagrams and Flowcharts"
+title: "图表和流程图"
 date: 2019-03-06
-description: "Guide to Mermaid usage in Congo"
-summary: "It's easy to add diagrams and flowcharts to articles using Mermaid."
+description: "Congo中Mermaid使用教程"
+summary: "使用Mermaid来绘制图表和流程图是非常简单的"
 tags: ["mermaid", "sample", "diagram", "shortcodes"]
 ---
 
-Mermaid diagrams are supported in Congo using the `mermaid` shortcode. Simply wrap the diagram markup within the shortcode. Congo automatically themes Mermaid diagrams to match the configured `colorScheme` parameter.
+Congo 支持使用 `mermaid` 短代码插入 Mermaid 图表。只需将图表标记包裹在短代码内。Congo 会自动根据配置的 `colorScheme` 参数为 Mermaid 图表添加主题。
 
-Refer to the [mermaid shortcode]({{< ref "docs/shortcodes#mermaid" >}}) docs for more details.
+有关更多详细信息，请参阅 [mermaid 短代码]({{< ref "docs/shortcodes#mermaid" >}}) 文档。
 
-The examples below are a small selection taken from the [official Mermaid docs](https://mermaid-js.github.io/mermaid/). You can also [view the page source](https://raw.githubusercontent.com/jpanther/congo/dev/exampleSite/content/samples/diagrams-flowcharts/index.md) on GitHub to see the markup.
+以下示例是从 [官方 Mermaid 文档](https://mermaid-js.github.io/mermaid/) 中摘取的一小部分。您还可以在 GitHub 上 [查看页面源代码](https://raw.githubusercontent.com/jpanther/congo/dev/exampleSite/content/samples/diagrams-flowcharts/index.md) 以查看标记。
 
-## Flowchart
+## 流程图
 
 {{< mermaid >}}
 graph TD
@@ -31,7 +31,7 @@ G
 end
 {{< /mermaid >}}
 
-## Sequence diagram
+## 时序图
 
 {{< mermaid >}}
 sequenceDiagram
@@ -51,7 +51,7 @@ John-->Alice: Great!
 end
 {{< /mermaid >}}
 
-## Class diagram
+## 类图
 
 {{< mermaid >}}
 classDiagram
@@ -77,7 +77,7 @@ class Zebra{
 }
 {{< /mermaid >}}
 
-## Entity relationship diagram
+## ER图
 
 {{< mermaid >}}
 erDiagram

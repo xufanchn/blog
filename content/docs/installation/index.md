@@ -1,82 +1,82 @@
 ---
-title: "Installation"
+title: "安装"
 date: 2020-08-16
 draft: false
-description: "How to install the Congo theme."
-summary: "Learn how to get up and running using Hugo and Congo from a completely blank state. It's the best place to start if you're a new user."
+description: "如何安装Congo主题"
+summary: "学习如何从0开始使用Hugo和Congo。如果您是新用户，这是开始的最佳位置。"
 slug: "installation"
 tags: ["installation", "docs"]
 ---
 
-Simply follow the standard Hugo [Quick Start](https://gohugo.io/getting-started/quick-start/) procedure to get up and running quickly.
+只需按照标准的Hugo [快速入门](https://gohugo.io/getting-started/quick-start/)流程，即可快速启动和运行。
 
-Detailed installation instructions can be found below. Instructions for [updating the theme](#installing-updates) are also available.
+下面提供了详细的安装说明。还有关于[更新主题](#installing-updates)的说明。
 
-## Installation
+## 安装
 
-These instructions will get you up and running using Hugo and Congo from a completely blank state. Most of the dependencies mentioned in this guide can be installed using the package manager of choice for your platform.
+以下说明将帮助您从0使用Hugo和Congo启动和运行。此指南中提到的大多数依赖项可以使用您平台上选择的包管理器进行安装。
 
-### Install Hugo
+### 安装Hugo
 
-If you haven't used Hugo before, you will need to [install it onto your local machine](https://gohugo.io/getting-started/installing). You can check if it's already installed by running the command `hugo version`.
+如果您以前没有使用过Hugo，您需要[将其安装到本地计算机上](https://gohugo.io/getting-started/installing)。您可以通过运行命令 `hugo version` 来检查是否已经安装。
 
 {{< alert >}}
-Make sure you are using **Hugo extended version 0.158.0** or later as the theme takes advantage of some of the latest Hugo features.
+确保您使用的是 **Hugo版本0.158.0** 或更高版本，因为该主题利用了一些最新的Hugo功能。
 {{< /alert >}}
 
-You can find detailed installation instructions for your platform in the [Hugo docs](https://gohugo.io/getting-started/installing).
+您可以在[Hugo文档](https://gohugo.io/getting-started/installing)中找到有关您平台的详细安装说明。
 
-### Create a new site
+### 创建新站点
 
-Run the command `hugo new site mywebsite` to create a new Hugo site in a directory named `mywebsite`.
+运行命令 `hugo new site mywebsite` 在名为 `mywebsite` 的目录中创建一个新的Hugo站点。
 
-Note that you can name the project directory whatever you choose, but the instructions below will assume it's named `mywebsite`. If you use a different name, be sure to substitute it accordingly.
+请注意，您可以将项目目录命名为任何您选择的名称，但下面的说明将假定其名称为 `mywebsite`。如果使用其他名称，请确保相应地进行替换。
 
-### Download the Congo theme
+### 下载Congo主题
 
-There several different ways to install the Congo theme into your Hugo website. From easiest to most difficult to install and maintain, they are:
+有几种不同的方法可以将Congo主题安装到您的Hugo网站中。从最简单到最难安装和维护的方式，它们分别是：
 
-- [Hugo module](#install-using-hugo) (recommended)
-- [Git submodule](#install-using-git)
-- [Manual file copy](#install-manually)
+- [Hugo模块](#使用hugo安装)（推荐）
+- [Git子模块](#使用git安装)
+- [手动文件复制](#手动安装)
 
-If you're unsure, choose the Hugo module method.
+如果不确定，请选择Hugo模块方法。
 
-#### Install using Hugo
+#### 使用Hugo安装
 
-This method is the quickest and easiest for keeping the theme up-to-date. Hugo uses **Go** to initialise and manage modules so you need to ensure you have `go` installed before proceeding.
+这种方法是保持主题最新的最快最简单的方法。Hugo使用 **Go** 来初始化和管理模块，因此在继续之前，您需要确保已安装 `go`。
 
-1. [Download](https://golang.org/dl/) and install Go. You can check if it's already installed by using the command `go version`.
+1. [下载](https://golang.org/dl/)并安装Go。您可以通过使用命令 `go version` 来检查是否已安装。
 
    {{< alert >}}
-   Make sure you are using **Go version 1.12** or later as Hugo requires this for modules to work correctly.
+   确保您使用的是 **Go版本1.12** 或更高版本，因为Hugo需要这个版本以使模块正常工作。
    {{< /alert >}}
 
-2. From your Hugo project directory (that you created above), initialise modules for your website:
+2. 从Hugo项目目录（您上面创建的目录）中，为您的网站初始化模块：
 
    ```shell
-   # If you're managing your project on GitHub
+   # 如果您在GitHub上管理项目
    hugo mod init github.com/<username>/<repo-name>
 
-   # If you're managing your project locally
+   # 如果您在本地管理项目
    hugo mod init my-project
    ```
 
-3. Add the theme to your configuration by creating a new file `config/_default/module.toml` and adding the following:
+3. 通过创建一个新文件 `config/_default/module.toml` 并添加以下内容，将主题添加到配置中：
 
    ```toml
    [[imports]]
    path = "github.com/jpanther/congo/v2"
    ```
 
-4. Start your server using `hugo server` and the theme will be downloaded automatically.
-5. Continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+4. 使用 `hugo server` 启动您的服务器，主题将自动下载。
+5. 继续 [设置主题配置文件](#设置主题配置文件)。
 
-#### Install using git
+#### 使用Git安装
 
-For this method you'll need to ensure you have **Git** installed on your local machine.
+对于这种方法，您需要确保在本地计算机上安装了 **Git**。
 
-Change into the directory for your Hugo website (that you created above), initialise a new `git` repository and add Congo as a submodule.
+切换到您的Hugo网站目录（上面创建的目录），初始化一个新的 `git` 存储库并将刚果添加为子模块。
 
 ```bash
 cd mywebsite
@@ -84,99 +84,90 @@ git init
 git submodule add -b stable https://github.com/jpanther/congo.git themes/congo
 ```
 
-Then continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+然后继续 [设置主题配置文件](#设置主题配置文件)。
 
-#### Install manually
+### 设置主题配置文件
 
-1. Download the latest release of the theme source code.
-
-   {{< button href="https://github.com/jpanther/congo/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
-
-2. Extract the archive, rename the folder to `congo` and move it to the `themes/` directory inside your Hugo project's root folder.
-3. Continue to [set up the theme configuration files](#set-up-theme-configuration-files).
-
-### Set up theme configuration files
-
-In the root folder of your website, delete the `hugo.toml` file that was generated by Hugo. Copy the `*.toml` config files from the theme into your `config/_default/` folder. This will ensure you have all the correct theme settings and will enable you to easily customise the theme to your needs.
+在您的网站根目录中，删除由Hugo生成的 `config.toml` 文件。将主题中的 `*.toml` 配置文件复制到您的 `config/_default/` 文件夹中。这将确保您具有所有正确的主题设置，并使您能够轻松地根据需要自定义主题。
 
 {{< alert >}}
-**Note:** You should not overwrite the `module.toml` file if one already exists in your project!
+**注意：** 如果您的项目中已存在 `module.toml` 文件，则不应覆盖它！
 {{< /alert >}}
 
-Depending on how you installed the theme you will find the theme config files in different places:
+根据您安装主题的方式，您将在不同的位置找到主题配置文件：
 
-- **Hugo Modules:** In the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jpanther/congo/tree/stable/config/_default) from GitHub
-- **Git submodule or Manual install:** `themes/congo/config/_default`
+- **Hugo模块：** 在Hugo缓存目录中，或者从GitHub[下载一份副本](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jpanther/congo/tree/stable/config/_default)
+- **Git子模块或手动安装：** `themes/congo/config/_default`
 
-Once you've copied the files, your config folder should look like this:
+复制文件后，您的配置文件夹应如下所示：
 
 ```shell
 config/_default/
-├─ hugo.toml
+├─ config.toml
 ├─ markup.toml
 ├─ menus.toml
-├─ module.toml  # if you installed using Hugo Modules
+├─ module.toml  # 如果使用Hugo模块安装
 └─ params.toml
 ```
 
 {{< alert >}}
-**Important:** If you didn't use Hugo Modules to install Congo, you must add the line `theme = "congo"` to the top of your `hugo.toml` file.
+**重要：** 如果您不是使用Hugo模块的方法安装Congo，则必须在您的 `config.toml` 文件顶部添加 `theme = "congo"` 这一行。
 {{< /alert >}}
 
-### Next steps
+### 下一步
 
-The basic Congo installation is now complete. Continue to the [Getting Started]({{< ref "getting-started" >}}) section to learn more about configuring the theme.
+基本的刚果安装现在已经完成。继续查看 [入门](#入门) 部分，了解有关配置主题的更多信息。
 
 ---
 
-## Installing updates
+## 安装更新
 
-From time to time there will be [new releases](https://github.com/jpanther/congo/releases) posted that apply fixes and add new functionality to the theme. In order to take advantage of these changes, you will need to update the theme files on your website.
+我们不时会发布[新的版本](https://github.com/jpanther/congo/releases)，其中包含对主题的修复和新功能。为了利用这些更改，您需要更新网站上的主题文件。
 
-How you go about this will depend on the installation method you chose when the theme was originally installed. Instructions for each method can be found below.
+您执行此操作的方式将取决于主题最初安装时选择的安装方法。下面是每种方法的说明。
 
-- [Hugo module](#update-using-hugo)
-- [Git submodule](#update-using-git)
-- [Manual file copy](#update-manually)
+- [Hugo模块](#使用Hugo更新)
+- [Git子模块](#使用Git更新)
+- [手动文件复制](#手动更新)
 
-### Update using Hugo
+### 使用Hugo更新
 
-Hugo makes updating modules super easy. Simply change into your project directory and execute the following command:
+Hugo使更新模块变得非常容易。只需切换到项目目录并执行以下命令：
 
 ```shell
 hugo mod get -u
 ```
 
-Hugo will automatically update any modules that are required for your project. It does this by inspecting your `module.toml` and `go.mod` files. If you have any issues with the update, check to ensure these files are still configured correctly.
+Hugo将自动更新项目所需的任何模块。它通过检查您的 `module.toml` 和 `go.mod` 文件来完成。如果更新时出现任何问题，请检查这些文件是否仍然正确配置。
 
-Then simply rebuild your site and check everything works as expected.
+然后只需重新构建您的站点，并检查一切是否按预期工作。
 
 {{< alert >}}
-When updating modules, sometimes Hugo will cache an older version of the theme. If this happens, clear your local cache by using the `hugo mod clean` command and then rebuild your site.
+在更新模块时，有时Hugo会缓存主题的较旧版本。如果发生这种情况，请使用 `hugo mod clean` 命令清除本地缓存，然后重新构建您的站点。
 {{< /alert >}}
 
-### Update using git
+### 使用Git更新
 
-Git submodules can be updated using the `git` command. Simply execute the following command and the latest version of the theme will be downloaded into your local repository:
+可以使用 `git` 命令更新Git子模块。只需执行以下命令，最新版本的主题将被下载到本地存储库中：
 
 ```shell
 git submodule update --remote --merge
 ```
 
-Once the submodule has been updated, rebuild your site and check everything works as expected.
+一旦子模块已更新，重新构建您的站点并检查一切是否按预期工作。
 
-### Update manually
+### 手动更新
 
-Updating Congo manually requires you to download the latest copy of the theme and replace the old version in your project.
+手动更新刚果需要您下载主题的最新副本，并替换项目中的旧版本。
 
 {{< alert >}}
-Note that any local customisations you have made to the theme files will be lost during this process.
+请注意，在此过程中，您对主题文件的任何本地自定义将丢失。
 {{< /alert >}}
 
-1. Download the latest release of the theme source code.
+1. 下载主题源代码的最新发布版本。
 
-   {{< button href="https://github.com/jpanther/congo/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
+   {{< button href="https://github.com/jpanther/congo/releases/latest" target="_blank" >}}从Github下载{{< /button >}}
 
-2. Extract the archive, rename the folder to `congo` and move it to the `themes/` directory inside your Hugo project's root folder. You will need to overwrite the existing directory to replace all the theme files.
+2. 解压缩存档，将文件夹重命名为 `congo`，并将其移动到Hugo项目根文件夹内的 `themes/` 目录。您需要覆盖现有目录以替换所有主题文件。
 
-3. Rebuild your site and check everything works as expected.
+3. 重新构建您的站点

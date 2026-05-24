@@ -1,53 +1,53 @@
 ---
-title: "Homepage Layout"
+title: "主页布局"
 date: 2020-08-13
 draft: false
-description: "Configuring the homepage layout in the Congo theme."
-summary: "Congo provides a fully flexible homepage layout with built-in templates and the ability to provide your own."
+description: "在 Congo 主题中配置首页布局。"
+summary: "Congo 提供了一个完全灵活的首页布局，内置了模板并支持自定义。"
 slug: "homepage-layout"
 tags: ["homepage", "layouts", "docs"]
 ---
 
-Congo provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.
+Congo 提供了完全灵活的首页布局。有两个主要的模板可供选择，并提供额外的设置以调整设计。此外，您还可以提供自己的模板，完全掌控首页内容。
 
-The layout of the homepage is controlled by the `homepage.layout` setting in the `params.toml` configuration file. Additionally, all layouts have the option to include a listing of [recent articles](#recent-articles).
+首页的布局由`params.toml`配置文件中的 `homepage.layout` 设置控制。另外，所有布局都可以选择包含[最近的文章](#recent-articles)列表。
 
-## Page layout
+## Page布局
 
-The default layout is the page layout. It's simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
+默认布局是page布局。它只是一个显示您的 Markdown 内容的普通内容页面。非常适用于静态网站，并提供了很大的灵活性。
 
-![Screenshot of homepage layout](home-page.jpg)
+![首页布局截图](home-page.jpg)
 
-To enable the page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+要启用页面布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "page"`。
 
-## Profile layout
+## Profile布局
 
-The profile layout is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
+profile布局非常适用于个人网站和博客。它通过提供图像和社交媒体链接，将作者的详细信息置于中心位置。
 
-![Screenshot of profile layout](home-profile.jpg)
+![个人资料布局截图](home-profile.jpg)
 
-The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
+作者信息存储在语言配置文件中。有关参数详细信息，请参阅 [入门指南]({{< ref "getting-started" >}}) 和 [语言配置]({{< ref "configuration##language-and-i18n" >}}) 部分。
 
-Additionally, any Markdown content that is provided in the homepage content will be placed below the author profile. This allows extra flexibility for displaying a bio or other custom content using shortcodes.
+此外，提供在主页内容中的任何 Markdown 内容将显示在作者资料下方。这允许额外的灵活性，以使用 Shortcodes 显示生物或其他自定义内容。
 
-To enable the profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
+要启用profile布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "profile"`。
 
-## Custom layout
+## custom布局
 
-If the built-in homepage layouts aren't sufficient for your needs, you have the option to provide your own custom layout. This allows you to have total control over the page content and essentially gives you a blank slate to work with.
+如果内置的首页布局不满足您的需求，您可以选择提供自己的自定义布局。这允许您完全掌控页面内容，基本上为您提供了一个空白的画布。
 
-To enable the custom layout, set `homepage.layout = "custom"` in the `params.toml` configuration file.
+要启用自定义布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "custom"`。
 
-With the configuration value set, create a new `custom.html` file and place it in `layouts/partials/home/custom.html`. Now whatever is in the `custom.html` file will be placed in the content area of the site homepage. You may use whatever HTML, Tailwind, or Hugo templating functions you wish to define your layout.
+配置值设置后，创建一个新的 `custom.html` 文件并将其放置在 `layouts/partials/home/custom.html`。现在，`custom.html` 文件中的任何内容都将放置在站点首页的内容区域。您可以使用任何 HTML、Tailwind 或 Hugo 模板函数来定义布局。
 
-To include [recent articles](#recent-articles) on the custom layout, use the `recent-articles.html` partial.
+要在自定义布局中包含[最近的文章](#recent-articles)，请使用 `recent-articles.html` 部分。
 
-As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layout to allow toggling between the profile and page layouts. Visit the [GitHub repo](https://github.com/jpanther/congo/blob/dev/exampleSite/layouts/partials/home/custom.html) to see how it works.
+例如，这个站点的[首页]({{< ref "/" >}})使用自定义布局，允许在profile和page布局之间切换。访问 [GitHub 仓库](https://github.com/jpanther/congo/blob/dev/exampleSite/layouts/partials/home/custom.html) 查看它是如何工作的。
 
-## Recent articles
+## 最近的文章
 
-All homepage layouts have the option of displaying recent articles below the main page content. To enable this, simply set the `homepage.showRecent` setting to `true` in the `params.toml` configuration file.
+所有首页布局都可以选择在主页面内容下方显示最近的文章。要启用此功能，只需在 `params.toml` 配置文件中将 `homepage.showRecent` 设置为 `true`。
 
-![Profile layout with recent articles](home-profile-list.jpg)
+![具有最近文章的个人资料布局](home-profile-list.jpg)
 
-The articles listed in this section are derived from the `mainSections` setting which allows for whatever content types you are using on your website. For instance, if you had content sections for _posts_ and _projects_ you could set this setting to `["posts", "projects"]` and all the articles in these two sections would be used to populate the recent list. The theme expects this setting to be an array so if you only use one section for all your content, you should set this accordingly: `["blog"]`.
+此部分中列出的文章来自 `mainSections` 设置，该设置允许使用您网站上使用的所有内容类型。例如，如果您有用于 _posts_ 和 _projects_ 的内容部分，可以将此设置设置为 `["posts", "projects"]`，所有这两个部分中的文章都将用于填充最近的列表。主题期望此设置为数组，因此如果您只使用一个部分来存储所有内容，您应相应地设置为 `["blog"]`。

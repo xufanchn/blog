@@ -1,19 +1,19 @@
 ---
-title: "Icons"
+title: "图标"
 date: 2020-08-14
 lastmod: 2025-05-04
 draft: false
-description: "Icon support in Congo."
+description: "Congo中的图标支持"
 slug: "icons"
 tags: ["icons", "sample", "shortcodes"]
 showDateUpdated: true
 ---
 
-Congo has built-in support for a number of [FontAwesome 6](https://fontawesome.com/icons) icons. These can be included in your website through either the [icon partial]({{< ref "docs/partials#icon" >}}) or [icon shortcode]({{< ref "docs/shortcodes#icon" >}}).
+Congo内置了对多个[FontAwesome 6](https://fontawesome.com/icons)图标的支持。这些图标可以通过[图标partial]({{< ref "docs/partials#图标" >}})或[图标shortcode]({{< ref "docs/shortcodes#icon" >}})来包含在您的网站中。
 
-Additionally, custom icons are also fully supported. Simply provide your own SVG icon assets by placing them in the `assets/icons/` directory in the root of your project. Any icons in the icons directory will then be available to use throughout the theme.
+此外，还完全支持自定义图标。只需将您自己的SVG图标文件放置在项目根目录的`assets/icons/`目录中。在icons目录中的任何图标都将在整个主题中可用。
 
-The full list of built-in icons and their corresponding names can referenced below.
+下面是内置图标及其对应名称的完整列表。
 
 | Icon name            | Preview                           |
 | -------------------- | --------------------------------- |

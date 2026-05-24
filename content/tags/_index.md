@@ -2,8 +2,8 @@
 title: Tags
 ---
 
-Congo has full support for Hugo taxonomies and will adapt to any taxonomy set up. Taxonomy listings like this one also support custom content to be displayed above the list of terms.
+Congo完全支持Hugo分类法，并将适应任何分类法设置。像这样的分类法列表还支持在术语列表上方显示自定义内容。
 
-This area could be used to add some extra descriptive text to each taxonomy. Check out the [advanced tag]({{< ref "advanced" >}}) below to see how to take this concept even further.
+这个区域可以用来添加一些额外的描述性文本到每个分类法。查看下面的 [高级标签]({{< ref "advanced" >}}) 了解如何进一步学习这个概念。
 
 ---

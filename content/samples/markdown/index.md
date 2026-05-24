@@ -1,17 +1,17 @@
 ---
 title: "Markdown"
 date: 2019-03-11
-description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description: "展示基本的Markdown语法和HTML元素格式的示例文章。"
 tags: ["markdown", "css", "html", "sample"]
 ---
 
-This article offers a sample of basic Markdown formatting that can be used in Congo, also it shows how some basic HTML elements are decorated.
+这篇文章提供了一些在Congo中可用的基本Markdown格式的示例，同时展示了如何装饰一些基本的HTML元素。
 
 <!--more-->
 
-## Headings
+## 标题
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+以下的HTML `<h1>` 到 `<h6>` 元素代表了六个级别的章节标题。 `<h1>` 是最高的章节级别，而 `<h6>` 是最低的。
 
 # H1
 
@@ -25,74 +25,78 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ###### H6
 
-## Paragraph
+## 段落
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
+阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
+阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
+阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
+阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+阿巴阿巴? 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴, 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴 阿巴阿巴.
 
-## Blockquotes
+## 引用
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+这是一段关于Markdown中引用块（Blockquotes）的内容。引用块用于表示从其他来源引用的内容，可选地包含引用来源，引用来源可以放在 `footer` 或 `cite` 元素中，也可以包含内联更改，如注释和缩写。
 
-### Blockquote without attribution
+### 无引用的引用块
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+> **注意**，你可以在引用块内使用 _Markdown语法_。
 
-### Blockquote with attribution
+### 带引用的引用块
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk `about` nothing](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^1]: 上面的引用摘自Rob Pike在Gopherfest于2015年11月18日的关于无关紧要的[演讲](https://www.youtube.com/watch?v=PAAkCSZUG1c)。
 
-## Tables
+## 表格
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+表格不属于核心Markdown规范，但Hugo原生支持它们，无需额外配置。
 
-| Name  | Age |
-| ----- | --- |
-| Bob   | 27  |
-| Alice | 23  |
+| 名前  | 年齢 |
+| ----- | ---- |
+| Bob   | 27   |
+| Alice | 23   |
 
-### Inline Markdown within tables
+### 表格内的行内Markdown
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| 斜体   | 粗体     | 代码   |
+| ------ | -------- | ------ |
+| _斜体_ | **粗体** | `代码` |
 
-## Code Blocks
+## 代码块
 
-### Code block with backticks
+### 使用反引号的代码块
 
 ```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
+    <title>示例HTML5文档</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>测试</p>
   </body>
 </html>
 ```
 
-### Code block indented with four spaces
+### 缩进四个空格的代码块
 
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
+      <title>示例HTML5文档</title>
     </head>
     <body>
-      <p>Test</p>
+      <p>测试</p>
     </body>
     </html>
 
-### Code block with Hugo's internal highlight shortcode
+### 使用Hugo内置的代码块高亮shortcode
 
 {{< highlight html "linenos=table,hl_lines=4 7-9" >}}
 
@@ -100,46 +104,46 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
+  <title>示例HTML5文档</title>
 </head>
 <body>
-  <p>Test</p>
+  <p>测试</p>
 </body>
 </html>
 {{< /highlight >}}
 
-## List Types
+## 列表类型
 
-### Ordered List
+### 有序列表
 
-1. First item
-2. Second item
-3. Third item
+1. 第一项
+2. 第二项
+3. 第三项
 
-### Unordered List
+### 无序列表
 
-- List item
-- Another item
-- And another item
+- 列表项
+- 另一项
+- 还有一项
 
-### Nested list
+### 嵌套列表
 
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+- 水果
+  - 苹果
+  - 橙子
+  - 香蕉
+- 乳制品
+  - 牛奶
+  - 奶酪
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## 其他元素 — 缩写、下标、上标、键盘、标记
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+<abbr title="Graphics Interchange Format">GIF</abbr> 是一种位图图像格式。
 
 H<sub>2</sub>O
 
 X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-Press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd> to end the session.
+按下 <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd> 结束会话。
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+大多数<mark>蝾螈</mark>是夜行动物，捕食昆虫、蠕虫和其他小动物。

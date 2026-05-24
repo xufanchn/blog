@@ -1,54 +1,54 @@
 ---
-title: "Configuration"
+title: "基本配置"
 date: 2020-08-14
 draft: false
-description: "All the configuration variables available in Congo."
-summary: "Discover all the site, language and theme configurations that are available in Congo and how they can be used to customise your project."
+description: "Congo中所有可使用的设定变量"
+summary: "探索一下 Congo 中所有的站点、语言和主题配置变量，以及如何用于自定义你的项目。"
 slug: "configuration"
 tags: ["config", "docs"]
 ---
 
-Congo is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+Congo 是一个高度可定制的主题，利用一些最新的 Hugo 特性来简化配置过程。
 
-The theme ships with a default configuration that gets you up and running with a basic blog or static website.
+该主题附带了一个默认配置，让你可以快速启动一个基本的博客或静态网站。
 
-> Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
+> 主题附带的配置文件采用 TOML 格式，因为这是 Hugo 的默认语法。如果你愿意，可以将配置转换为 YAML 或 JSON。
 
-The default theme configuration is documented in each file so you can freely adjust the settings to meet your needs.
+每个文件中都有默认主题配置的文档，因此你可以自由调整设置以满足你的需求。
 
 {{< alert >}}
-As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `hugo.toml` file in your project root.
+正如在[安装说明]({{< ref "/docs/installation#set-up-theme-configuration-files" >}})中所述，你应该通过修改 Hugo 项目的 `config/_default/` 文件夹中的文件来调整主题配置，并删除项目根目录中的 `config.toml` 文件。
 {{< /alert >}}
 
-## Site configuration
+## 网站配置
 
-Standard Hugo configuration variables are respected throughout the theme, however there are some specific things that should be configured for the best experience.
+Congo主题全面遵循标准 Hugo 配置变量，但是有一些特定的配置项需要进行设置以获得最佳体验。
 
-The site configuration is managed through the `config/_default/hugo.toml` file. The table below outlines all the settings that the Congo takes advantage of.
+网站配置通过 `config/_default/config.toml` 文件管理。下表概述了 Congo 主题所使用的所有设置。
 
-Note that the variable names provided in this table use dot notation to simplify the TOML data structure (ie. `outputs.home` refers to `[outputs] home`).
+请注意，此表中提供的变量名使用点表示法来简化 TOML 数据结构（即 `outputs.home` 指的是 `[outputs] home`）。
 
 <!-- prettier-ignore-start -->
-|Name|Default|Description|
+|名称|默认值|描述|
 |---|---|---|
-|`theme`|`"congo"`|When using Hugo Modules this config value should be removed. For all other installation types, this must be set to `congo` for the theme to function.|
-|`baseURL`|_Not set_|The URL to the root of the website.|
-|`defaultContentLanguage`|`"en"`|This value determines the default language of theme components and content. Refer to the [language and i18n](#language-and-i18n) section below for supported language codes.|
-|`enableRobotsTXT`|`true`|When enabled, a `robots.txt` file will be created in the site root that allows search engines to crawl the entire site. If you prefer to provide your own pre-made `robots.txt`, set to `false` and place your file in the `static` directory. For complete control, you may provide a [custom layout]({{< ref "content-examples#custom-layouts" >}}) to generate this file.|
-|`pagination.pagerSize`|`10`|The number of articles listed on each page of the article listing.|
-|`summaryLength`|`0`|The number of words that are used to generate the article summary when one is not provided in the [front matter]({{< ref "front-matter" >}}). A value of `0` will use the first sentence. This value has no effect when summaries are hidden.|
-|`outputs.home`|`["HTML", "RSS", "JSON"]`|The output formats that are generated for the site. Congo requires HTML, RSS and JSON for all theme components to work correctly.|
-|`permalinks`|_Not set_|Refer to the [Hugo docs](https://gohugo.io/content-management/urls/#permalinks) for permalink configuration.|
-|`taxonomies`|_Not set_|Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.|
+|`theme`|`"congo"`|使用 Hugo 模块方法安装时，应删除此配置值。对于所有其他安装类型，必须将其设置为 `congo`，以使主题正常运行。|
+|`baseURL`|_未设置_|网站根目录的 URL。|
+|`defaultContentLanguage`|`"en"`|此值确定主题组件和内容的默认语言。有关受支持的语言代码，请参阅下面的[语言和国际化](#language-and-i18n)部分。|
+|`enableRobotsTXT`|`true`|启用时，在站点根目录将创建一个 `robots.txt` 文件，允许搜索引擎爬取整个站点。如果你更喜欢提供自己制作的 `robots.txt`，请设置为 `false` 并将文件放置在 `static` 目录中。为了完全控制，你可以提供一个[自定义布局]({{< ref "content-examples#custom-layouts" >}})来生成此文件。|
+|`paginate`|`10`|在文章列表中每页列出的文章数。|
+|`summaryLength`|`0`|在[front matter]({{< ref "front-matter" >}})中未提供摘要时，用于生成文章摘要的字数。值为 `0` 将使用第一句。当摘要被隐藏时，此值无效。|
+|`outputs.home`|`["HTML", "RSS", "JSON"]`|生成站点的输出格式。Congo 需要 HTML、RSS 和 JSON 才能使所有主题组件正常工作。|
+|`permalinks`|_未设置_|有关固定链接配置，请参阅[Hugo文档](https://gohugo.io/content-management/urls/#permalinks)。|
+|`taxonomies`|_未设置_|有关分类法配置，请参阅[组织内容]({{< ref "getting-started#organising-content" >}})部分。|
 <!-- prettier-ignore-end -->
 
-## Language and i18n
+## 语言和国际化
 
-Congo is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
+Congo 针对完整的多语言网站进行了优化，并且主题assets中已经默认翻译成多种语言。语言配置允许您生成多个版本的内容，以为访问者提供在其母语中的定制体验。
 
-The theme currently supports the following languages out of the box:
+该主题目前支持以下语言：
 
-| Language              | Code      |
+| 语言                  | 代码      |
 | --------------------- | --------- |
 | **English (default)** | `en`      |
 | Arabic                | `ar`      |
@@ -83,116 +83,112 @@ The theme currently supports the following languages out of the box:
 | Ukrainian             | `uk`      |
 | Vietnamese            | `vi`      |
 
-The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/jpanther/congo/pulls).
+默认翻译可以通过在 `i18n/[code].yaml` 中创建自定义文件来覆盖，其中包含翻译字符串。您还可以使用此方法添加新语言。如果您希望与社区分享新的翻译，请[Pull Request](https://github.com/jpanther/congo/pulls)。
 
-### Configuration
+### 配置
 
-In order to be as flexible as possible, a language configuration file needs to be created for each language on the website. By default Congo includes an English language configuration at `config/_default/languages.en.toml`.
+为了尽可能灵活，需要为网站上的每种语言创建一个语言配置文件。默认情况下，Congo 在 `config/_default/languages.en.toml` 中包含英语语言配置。
 
-The default file can be used as a template to create additional languages, or renamed if you wish to author your website in a language other than English. Simply name the file using the format `languages.[language-code].toml`.
+默认文件可以用作创建其他语言的模板，或者如果希望使用英语以外的语言编写网站，则可以重命名。只需使用格式 `languages.[language-code].toml` 命名文件。
 
 {{< alert >}}
-**Note:** Ensure the `defaultContentLanguage` parameter in the [site configuration](#site-configuration) matches the language code in your language config filename.
+**注意：** 确保[网站配置](#site-configuration)中的 `defaultContentLanguage` 参数与语言配置文件名中的语言代码匹配。
 {{< /alert >}}
 
 <!-- prettier-ignore-start -->
-|Name|Default|Description|
+|名称|默认值|描述|
 |---|---|---|
-|`locale`|`"en"`|The Hugo language code for this file. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`) and should match the language code in the filename.|
-|`label`|`"English"`|The name of the language.|
-|`direction`|`"ltr"`|Whether or not this is an RTL language. Set to `"rtl"` to reflow content from right-to-left. Congo fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.|
-|`weight`|`1`|The weight determines the order of languages when building multilingual sites.|
-|`title`|`"Congo"`|The title of the website. This will be displayed in the site header and footer.|
-|`copyright`|_Not set_|A Markdown string containing the copyright message to be displayed in the site footer. If none is provided, Congo will automatically generate a copyright string using the site `title`.|
-|`params.dateFormat`|`"2 January 2006"`|How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/format/#gos-layout-string) for acceptable formats.|
-|`params.mainSections`|_Not set_|The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.|
-|`params.description`|_Not set_|The website description. This will be used in the site metadata.|
-|`params.author.name`|_Not set_|The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.|
-|`params.author.image`|_Not set_|Path to the image file of the author. The image should be a 1:1 aspect ratio and placed in the site's `assets/` folder.|
-|`params.author.headline`|_Not set_|A Markdown string containing the author's headline. It will be displayed on the profile homepage under the author's name.|
-|`params.author.bio`|_Not set_|A Markdown string containing the author's bio. It will be displayed in article footers.|
-|`params.author.links`|_Not set_|The links to display alongside the author's details. The config file contains example links which can simply be uncommented to enable. The order that the links are displayed is determined by the order they appear in the array. Custom links can be added by providing corresponding SVG icon assets in `assets/icons/`.|
+|`locale`|`"en"`|此文件的 Hugo 语言代码。它可以是顶级语言（即 `en`）或子变体（即 `en-AU`），并应与文件名中的语言代码匹配。|
+|`label`|`"English"`|语言的名称。|
+|`direction`|`"ltr"`|这是否是 RTL 语言。设置为 `"rtl"` 以从右到左重新排列内容。Congo 完全支持同时使用 RTL 和 LTR 语言，并会动态调整到两者。|
+|`weight`|`1`|构建多语言站点时语言的顺序的权重。|
+|`title`|`"Congo"`|网站的标题。这将显示在站点标题和页脚中。|
+|`copyright`|_未设置_|包含要显示在站点页脚中的版权消息的 Markdown 字符串。如果未提供，则 Congo 将使用站点 `title` 自动生成版权字符串。|
+|`params.dateFormat`|`"2 January 2006"`|此语言中日期的格式。有关可接受格式，请参阅[Hugo文档](https://gohugo.io/functions/format/#gos-layout-string)。|
+|`params.mainSections`|_未设置_|显示在最新文章列表中的部分。如果未提供，则使用文章数最多的部分。|
+|`params.description`|_未设置_|网站描述。这将用于站点元数据。|
+|`author.name`|_未设置_|作者的姓名。这将显示在文章页脚和使用配置文件布局时在主页上。|
+|`author.image`|_未设置_|作者的图像文件路径。图像应为1:1的宽高比，并放置在站点的 `assets/` 文件夹中。|
+|`author.headline`|_未设置_|包含作者头衔的 Markdown 字符串。它将显示在主页上作者姓名下方。|
+|`author.bio`|_未设置_|包含作者简介的 Markdown 字符串。它将显示在文章页脚中。|
+|`author.links`|_未设置_|要显示在作者详细信息旁边的链接。配置文件包含可以取消注释以启用的示例链接。显示链接的顺序由它们在数组中出现的顺序确定。可以通过在 `assets/icons/` 中提供相应的 SVG 图标资产来添加自定义链接。|
 <!-- prettier-ignore-end -->
 
-### Menus
+### 菜单
 
-Congo also supports language-specific menu configurations. Menu config files follow the same naming format as the languages file. Simply provide the language code in the file name to tell Hugo which language the file relates to.
+Congo 还支持语言特定的菜单配置。菜单配置文件遵循与语言文件相同的命名格式。只需在文件名中提供语言代码，以告诉 Hugo 该文件与哪种语言相关。
 
-Menu config files are named with the format `menus.[language-code].toml`. Always ensure that the language code used in the menus configuration matches the languages configuration.
+菜单配置文件的命名格式为 `menus.[language-code].toml`。始终确保菜单配置中使用的语言代码与语言配置相匹配。
 
-The [Getting Started]({{< ref "getting-started#menus" >}}) section explains more about the structure of this file. You can also refer to the [Hugo menu docs](https://gohugo.io/content-management/menus/) for more configuration examples.
+[快速开始]({{< ref "getting-started#menus" >}})部分更详细地解释了此文件的结构。您还可以参考[Hugo 菜单文档](https://gohugo.io/content-management/menus/)以获取更多配置示例。
 
-## Theme parameters
+## 主题参数
 
-Congo provides a large number of configuration parameters that control how the theme functions. The table below outlines every available parameter in the `config/_default/params.toml` file.
+Congo 提供了大量的配置参数，用于控制主题的功能。下表概述了 `config/_default/params.toml` 文件中的每个可用参数。
 
-Many of the article defaults here can be overridden on a per article basis by specifying it in the front matter. Refer to the [Front Matter]({{< ref "front-matter" >}}) section for further details.
+这里的许多文章默认值可以通过在 front matter 中指定来覆盖每篇文章的默认值。有关详细信息，请参阅[Front Matter]({{< ref "front-matter" >}})部分。
 
 <!-- prettier-ignore-start -->
-|Name|Default|Description|
+|名称|默认值|描述|
 |---|---|---|
-|`colorScheme`|`"congo"`|The theme colour scheme to use. Valid values are `congo` (default), `avocado`, `cherry`, `fire`, `ocean`, `sapphire` and `slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details.|
-|`defaultThemeColor`|`"#FFFFFF"`|The original value (before any scripts modify it) to use for the `theme-color` meta tag. The meta tag will be changed based on the theme (`light` or `dark`) but it is useful for services that source the original value this tag to display an accent color (e.g. Discord)|
-|`defaultAppearance`|`"light"`|The default theme appearance, either `light` or `dark`.|
-|`autoSwitchAppearance`|`true`|Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.|
-|`enableSearch`|`false`|Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.|
-|`enableCodeCopy`|`false`|Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below.|
-|`enableImageLazyLoading`|`true`|Whether images should be marked for lazy loading by the browser.|
-|`enableImageWebp`|`true`|Whether images should be output in the more performant WebP format.|
-|`enableQuicklink`|`true`|Whether the [Quicklink](https://getquick.link/) library should be included in the site. Quicklink prefetches links based upon the user's viewport and leads to faster page navigation.|
-|`robots`|_Not set_|String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.|
-|`fingerprintAlgorithm`|`"sha256"`|String that indicates which hashing algorithm is used when fingerprinting assets. Valid options include `md5`, `sha256`, `sha384` and `sha512`.|
-|`header.layout`|`"basic"`|The layout of the page header and menu. Valid values are `basic`, `hamburger`, `hybrid` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/header/custom.html` file.|
-|`header.logo`|_Not set_|The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.|
-|`header.logoDark`|_Not set_|As per the `header.logo` parameter, however this image is used whenever dark mode is active.|
-|`header.showTitle`|`true`|Whether the site title is displayed in the header.|
-|`footer.showCopyright`|`true`|Whether or not to show the copyright string in the site footer. Note that the string itself can be customised using the `copyright` parameter in the [languages configuration](#language-and-i18n).|
-|`footer.showThemeAttribution`|`true`|Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page).|
-|`footer.showAppearanceSwitcher`|`false`|Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.|
-|`footer.showScrollToTop`|`true`|When set to `true` the scroll to top arrow is displayed.|
-|`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
-|`homepage.showRecent`|`false`|Whether or not to display the recent articles list on the homepage.|
-|`homepage.recentLimit`|`5`|The maximum number of recent articles to display when `homepage.showRecent` is `true`.|
-|`article.showDate`|`true`|Whether or not article dates are displayed.|
-|`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|
-|`article.showAuthor`|`true`|Whether or not the author box is displayed in the article footer.|
-|`article.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the article header.|
-|`article.showDraftLabel`|`true`|Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.|
-|`article.showEdit`|`false`|Whether or not the link to edit the article content should be displayed.|
-|`article.editURL`|_Not set_|When `article.showEdit` is active, the URL for the edit link.|
-|`article.editAppendPath`|`true`|When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.|
-|`article.showHeadingAnchors`|`true`|Whether or not heading anchor links are displayed alongside headings within articles.|
-|`article.showPagination`|`true`|Whether or not the next/previous article links are displayed in the article footer.|
-|`article.invertPagination`|`false`|Whether or not to flip the direction of the next/previous article links.|
-|`article.showReadingTime`|`true`|Whether or not article reading times are displayed.|
-|`article.showTableOfContents`|`false`|Whether or not the table of contents is displayed on articles.|
-|`article.showTaxonomies`|`false`|Whether or not the taxonomies related to this article are displayed.|
-|`article.showWordCount`|`false`|Whether or not article word counts are displayed.|
-|`article.showComments`|`false`|Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.|
-|`article.sharingLinks`|_Not set_|An array of sharing links to display at the end of each article. Valid options include `facebook`, `x-twitter`, `mastodon`, `pinterest`, `reddit`, `linkedin`, `email`, `threads`, `telegram`, `line`, `weibo`, `xing` and `bluesky`. When not provided, or set to `false`, no links will be displayed.|
-|`list.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the header on list pages.|
-|`list.showTableOfContents`|`false`|Whether or not the table of contents is displayed on list pages.|
-|`list.showTaxonomies`|`false`|Whether or not the taxonomies related to this article are displayed on list pages.|
-|`list.showSummary`|`false`|Whether or not article summaries are displayed on list pages. If a summary is not provided in the [front matter]({{< ref "front-matter" >}}), one will be auto generated using the `summaryLength` parameter in the [site configuration](#site-configuration).|
-|`list.groupByYear`|`true`|Whether or not articles are grouped by year on list pages.|
-|`list.paginationWidth`|`1`|How many pagination links to output either side of the current page when the page list needs to be truncated. A width of `1` will output one link either side of the current page when the list needs to be truncated. Links to the current, first and last pages are always displayed and are in addition to this value.|
-|`sitemap.excludedKinds`|`["taxonomy", "term"]`|Kinds of content that should be excluded from the generated `/sitemap.xml` file. Refer to the [Hugo docs](https://gohugo.io/templates/section-templates/#page-kinds) for acceptable values.|
-|`taxonomy.showTermCount`|`true`|Whether or not the number of articles within a taxonomy term is displayed on the taxonomy listing.|
-|`fathomAnalytics.site`|_Not set_|The site code generated by Fathom Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`plausibleAnalytics.domain`|_Not set_|Enter the domain of the website you want to track. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`plausibleAnalytics.event`|_Not set_|Plausible api event proxied URL. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`plausibleAnalytics.script`|_Not set_|Plausible analysis script proxied URL. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`umamiAnalytics.site`|_Not set_|The tracking code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`umamiAnalytics.region`|`eu`|Select the Umami Analytics server region to connect to. The value is a string that can be either `eu` or `us`.|
-|`umamiAnalytics.script`|_Not set_|Custom script URL for Umami Analytics. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.|
-|`verification.google`|_Not set_|The site verification string provided by Google to be included in the site metadata.|
-|`verification.bing`|_Not set_|The site verification string provided by Bing to be included in the site metadata.|
-|`verification.pinterest`|_Not set_|The site verification string provided by Pinterest to be included in the site metadata.|
-|`verification.yandex`|_Not set_|The site verification string provided by Yandex to be included in the site metadata.|
+|`colorScheme`|`"congo"`|要使用的主题颜色方案。有效值为 `congo`（默认）、`avocado`、`cherry`、`fire`、`ocean`、`sapphire` 和 `slate`。有关详细信息，请参阅[颜色方案]({{< ref "getting-started#颜色方案" >}})部分。|
+|`defaultThemeColor`|`"#FFFFFF`|`theme-color` meta 标签的原值（在脚本修改它之前）。meta 标签会根据所选主题而变化（`light` 或 `dark`），但是一些软件（例如 Discord）会使用该标签的原值来显示主题色。|
+|`defaultAppearance`|`"light"`|默认的主题外观，可以是 `light` 或 `dark`。|
+|`autoSwitchAppearance`|`true`|主题外观是否根据访问者的操作系统首选项自动切换。设置为 `false` 以始终使用 `defaultAppearance`。|
+|`enableSearch`|`false`|是否启用站内搜索。设置为 `true` 以启用搜索功能。请注意，搜索功能取决于 [站点配置](#site-configuration) 中的 `outputs.home` 设置正确。|
+|`enableCodeCopy`|`false`|是否启用 `<code>` 块的复制到剪贴板按钮。`highlight.noClasses` 参数必须设置为 `false`，以使代码复制正常工作。有关[其他配置文件](#other-configuration-files)的详细信息，请阅读下文。|
+|`enableImageLazyLoading`|`true`|是否将图像标记为浏览器的延迟加载。|
+|`robots`|_未设置_|指示机器人如何处理您的站点的字符串。如果设置，将在页面头部输出。有关有效值，请参阅[Google 文档](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)。|
+|`fingerprintAlgorithm`|`"sha256"`|指示在对assets进行指纹识别时使用的哈希算法。有效选项包括 `md5`、`sha256`、`sha384` 和 `sha512`。|
+|`header.layout`|`"basic"`|页面头部和菜单的布局。有效值为 `basic`、`hamburger`、`hybrid` 或 `custom`。当设置为 `custom` 时，您必须通过创建 `/layouts/partials/header/custom.html` 文件提供自己的布局。|
+|`header.logo`|_未设置_|站点徽标文件在 `assets/` 文件夹内的相对路径。徽标文件应以 2x 分辨率提供，并支持任何图像尺寸。|
+|`header.logoDark`|_未设置_|与 `header.logo` 参数相同，但此图像在启用深色模式时使用。|
+|`header.showTitle`|`true`|是否在页眉中显示站点标题。|
+|`footer.showCopyright`|`true`|是否在站点页脚显示版权字符串。请注意，可以使用[语言配置](#language-and-i18n)中的 `copyright` 参数自定义字符串。|
+|`footer.showThemeAttribution`|`true`|是否在站点页脚显示 "由...强力驱动" 的主题归属。如果选择禁用此消息，请考虑在站点的其他地方（例如关于页面）写上主题归属。|
+|`footer.showAppearanceSwitcher`|`false`|是否在站点页脚显示外观切换器。使用浏览器的本地存储来保留访问者的首选项。|
+|`footer.showScrollToTop`|`true`|设置为 `true` 时，将显示返回顶部箭头。|
+|`homepage.layout`|`"page"`|主页的布局。有效值为 `page`、`profile` 或 `custom`。当设置为 `custom` 时，您必须通过创建 `/layouts/partials/home/custom.html` 文件提供自己的布局。有关详细信息，请参阅[主页布局]({{< ref "homepage-layout" >}})部分。|
+|`homepage.showRecent`|`false`|是否在主页上显示最近的文章列表。|
+|`homepage.recentLimit`|`5`|当 `homepage.showRecent` 为 `true` 时，显示的最大最近文章数。|
+|`article.showDate`|`true`|是否显示文章日期。|
+|`article.showDateUpdated`|`false`|是否显示文章更新日期。|
+|`article.showAuthor`|`true`|是否在文章页脚显示作者框。|
+|`article.showBreadcrumbs`|`false`|是否在文章头部显示面包屑。|
+|`article.showDraftLabel`|`true`|在使用 `--buildDrafts` 构建站点时，是否显示文章旁边的草稿标签。|
+|`article.showEdit`|`false`|是否显示编辑文章内容的链接。|
+|`article.editURL`|_未设置_|当 `article.showEdit` 激活时，编辑链接的 URL。|
+|`article.editAppendPath`|`true`|当 `article.showEdit` 激活时，是否将当前文章的路径附加到设置为 `article.editURL` 的 URL。|
+|`article.showHeadingAnchors`|`true`|是否在文章内的标题旁边显示锚链接。|
+|`article.showPagination`|`true`|是否在文章页脚显示下一篇/上一篇文章的链接。|
+|`article.invertPagination`|`false`|是否翻转下一篇/上一篇文章链接的方向。|
+|`article.showReadingTime`|`true`|是否显示文章阅读时间。|
+|`article.showTableOfContents`|`false`|是否在文章上显示目录。|
+|`article.showTaxonomies`|`false`|是否在与文章相关的分类法上显示。|
+|`article.showWordCount`|`false`|是否显示文章字数。|
+|`article.showComments`|`false`|是否在文章页脚之后包含[comments partial]({{< ref "partials#comments" >}})。|
+|`article.sharingLinks`|_未设置_|要在每篇文章末尾显示的分享链接。如果未提供或设置为 `false`，则不会显示任何链接。|
+|`list.showBreadcrumbs`|`false`|是否在列表页面的页眉中显示面包屑。|
+|`list.showTableOfContents`|`false`|是否在列表页面上显示目录。|
+|`list.showTaxonomies`|`false`|是否在列表页面上显示与此文章相关的分类法。|
+|`list.showSummary`|`false`|是否在列表页面上显示文章摘要。如果在[Front Matter]({{< ref "front-matter" >}})中未提供摘要，则将使用[站点配置](#site-configuration)中的 `summaryLength` 参数自动生成一个摘要。|
+|`list.groupByYear`|`true`|是否在列表页面上按年份对文章进行分组。|
+|`list.paginationWidth`|`1`|在需要截断页面列表时，输出当前页面两侧的分页链接数。宽度为 `1` 将在需要截断列表时输出当前页面两侧的一个链接。当前、第一个和最后一个页面的链接始终会显示，并且是在此值之外的链接。|
+|`sitemap.excludedKinds`|`["taxonomy", "term"]`|应从生成的 `/sitemap.xml` 文件中排除的内容类型。有关可接受的值，请参阅[Hugo 文档](https://gohugo.io/templates/section-templates/#page-kinds)。|
+|`taxonomy.showTermCount`|`true`|是否在分类法列表上显示分类术语内文章的数量。|
+|`fathomAnalytics.site`|_未设置_|由 Fathom Analytics 为网站生成的站点代码。有关详细信息，请参阅[分析文档]({{< ref "partials#analytics" >}})。|
+|`fathomAnalytics.domain`|_未设置_|如果在 Fathom Analytics 中使用自定义域，请在此提供以从自定义域提供 `script.js`。|
+|`plausibleAnalytics.domain`|_未设置_|输入要跟踪的网站的域。有关详细信息，请参阅[分析文档]({{< ref "partials#analytics" >}})。|
+|`plausibleAnalytics.event`|_未设置_|可寻址 Plausible api 事件的 URL。有关详细信息，请参阅[分析文档]({{< ref "partials#analytics" >}})。|
+|`plausibleAnalytics.script`|_未设置_|可寻址 Plausible 分析脚本的 URL。有关详细信息，请参阅[分析文档]({{< ref "partials#analytics" >}})。|
+|`verification.google`|_未设置_|由 Google 提供的要包含在站点元数据中的站点验证字符串。|
+|`verification.bing`|_未设置_|由 Bing 提供的要包含在站点元数据中的站点验证字符串。|
+|`verification.pinterest`|_未设置_|由 Pinterest 提供的要包含在站点元数据中的站点验证字符串。|
+|`verification.yandex`|_未设置_|由 Yandex 提供的要包含在站点元数据中的站点验证字符串。|
 <!-- prettier-ignore-end -->
 
-## Other configuration files
+## 其他配置文件
 
-The theme also includes a `markup.toml` configuration file. This file contains some important parameters that ensure that Hugo is correctly configured to generate sites built with Congo.
+主题还包括一个 `markup.toml` 配置文件。该文件包含一些重要的参数，确保 Hugo 正确配置以生成使用 Congo 构建的站点。
 
-Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to function incorrectly and could result in unintended behaviour.
+始终确保此文件存在于配置目录中，并设置所需的值。否则，可能导致某些功能不正确地运行，并可能导致意外的行为。

@@ -1,14 +1,14 @@
 ---
-title: "External Article - Why I switched to Fathom Analytics"
+title: "外部文章 - 为什么我改用 Fathom Analytics"
 date: 2019-01-24
 externalUrl: "https://jamespanther.com/writings/i-switched-from-google-analytics-to-fathom-analytics/"
-summary: "The `externalUrl` front matter parameter can link to any URL. This article looks just like any other, but will link to a post that is outside the Hugo project."
+summary: "Front Matter中的`externalUrl` 参数可以链接到任何 URL。这篇文章看起来和其他文章没什么区别，但会链接到 Hugo 网站之外的一篇文章。"
 showReadingTime: false
 build:
   render: "never"
   list: "local"
 ---
 
-This page uses the `externalUrl` front matter parameter to link to an article outside of this Hugo website.
+这个页面使用Front Matter中的`externalUrl`参数将链接指向了Hugo网站之外的一篇文章。
 
-It's great for things like linking to posts on Medium or to research papers you may have hosted on third party websites.
+这对于像链接到Medium上的文章或者托管在第三方网站上的研究论文等情况非常方便。

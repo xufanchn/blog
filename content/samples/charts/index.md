@@ -1,26 +1,26 @@
 ---
-title: "Charts"
+title: "表格"
 date: 2019-03-06
-description: "Guide to Chart.js usage in Congo"
-summary: "Congo includes Chart.js for powerful charts and data visualisations."
+description: "Chart.js在Congo中的用法"
+summary: "Congo使用chart.js来提供强大的表格支持和数据可视化。"
 tags: ["chart", "sample", "graph", "shortcodes"]
 ---
 
-Congo includes support for Chart.js using the `chart` shortcode. Simply wrap the chart markup within the shortcode. Congo automatically themes charts to match the configured `colorScheme` parameter, however the colours can be customised using normal Chart.js syntax.
+Congo 包含对 Chart.js 的支持，使用 `chart` 短代码即可。只需将图表标记包裹在短代码内。Congo 会自动根据配置的 `colorScheme` 参数为图表添加主题，但颜色可以使用常规的 Chart.js 语法进行自定义。
 
-Refer to the [chart shortcode]({{< ref "docs/shortcodes#chart" >}}) docs for more details.
+有关更多详细信息，请参阅 [chart 短代码]({{< ref "docs/shortcodes#chart" >}}) 文档。
 
-The examples below are a small selection taken from the [official Chart.js docs](https://www.chartjs.org/docs/latest/samples). You can also [view the page source](https://raw.githubusercontent.com/jpanther/congo/dev/exampleSite/content/samples/charts/index.md) on GitHub to see the markup.
+以下示例是从 [官方 Chart.js 文档](https://www.chartjs.org/docs/latest/samples) 中摘取的一小部分。您还可以在 GitHub 上 [查看页面源代码](https://raw.githubusercontent.com/jpanther/congo/dev/exampleSite/content/samples/charts/index.md) 以查看标记。
 
-## Bar chart
+## 柱状图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'bar',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '我的第一个数据集  ',
     data: [65, 59, 80, 81, 56, 55, 40],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -46,15 +46,15 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Line chart
+## 折线图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'line',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '我的第一个数据集',
     data: [65, 59, 80, 81, 56, 55, 40],
     tension: 0.2
   }]
@@ -62,13 +62,13 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Doughnut chart
+## 圆环图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'doughnut',
 data: {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ['红', '蓝', '黄'],
   datasets: [{
     label: 'My First Dataset',
     data: [300, 50, 100],

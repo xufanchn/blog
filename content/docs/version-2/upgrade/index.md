@@ -1,91 +1,91 @@
 ---
-title: "Upgrading from Congo 1.x"
+title: "从Congo 1.x升级"
 date: 2022-01-20
 draft: false
-description: "Discover what's new in Congo version 2.0."
+description: "探索2.0的新特性"
 tags: ["new", "docs"]
 ---
 
-Although Congo 2.0 contains a large number of changes, the theme has been designed to minimise the effort required to upgrade to the latest release.
+尽管 Congo 2.0 包含大量变化，但主题已经经过设计，以最小化升级到最新版本所需的努力。
 
-That said, there are some changes that require adjustments to existing sites that are built with Congo version 1.x. This guide will step you through the process and highlight things you need to consider.
+话虽如此，有一些变化需要调整使用 Congo 1.x 构建的现有站点。本指南将引导你完成整个过程，并突出需要考虑的事项。
 
-## Step 1: Upgrade Hugo
+## 步骤1：升级Hugo
 
 {{< alert >}}
-Congo 2.0 requires a minimum of **Hugo v0.158.0 or later**
+Congo 2.0 要求最低 **Hugo v0.158.0 或更高版本**
 {{< /alert >}}
 
-Congo is built to take advantage of some of the latest Hugo features. You should regularly keep your Hugo installation up to date to avoid any issues.
+Congo被设计以充分利用一些最新的Hugo功能。为避免任何问题，你应该定期保持Hugo的安装版本。
 
-You can check your current version using the command `hugo version`. Visit the [Hugo docs](https://gohugo.io/getting-started/installing/) for information on obtaining a newer release for your platform.
+你可以使用命令 `hugo version` 检查你当前的版本。请访问[Hugo文档](https://gohugo.io/getting-started/installing/)获取适用于你平台的更新版本的信息。
 
-## Step 2: Upgrade Congo
+## 步骤2：升级Congo
 
-The process for upgrading Congo will depend on how you include the theme in your project. Instructions for each method can be found below.
+升级Congo的过程取决于你如何在项目中引入主题。每种方法的说明如下。
 
-- [Upgrade using Hugo](#upgrade-using-hugo)
-- [Upgrade using git](#upgrade-using-git)
-- [Upgrade manually](#upgrade-manually)
+- [使用Hugo升级](#使用Hugo升级)
+- [使用git升级](#使用git升级)
+- [手动升级](#手动升级)
 
-### Upgrade using Hugo
+### 使用Hugo升级
 
-To upgrade a go module to a new major release, the `modules.toml` and `go.mod` files need to be updated. In each file, update the path to the theme from `github.com/jpanther/congo` to `github.com/jpanther/congo/v2`.
+要将go模块升级到新的主版本，需要更新 `modules.toml` 和 `go.mod` 文件。在每个文件中，将主题的路径从 `github.com/jpanther/congo` 更新为 `github.com/jpanther/congo/v2`。
 
-Then change into your project directory and execute the following command:
+然后进入你的项目目录并执行以下命令：
 
 ```shell
 hugo mod get -u
 ```
 
-Note that in some circumstances there may be issues with this step due to the way that Hugo locally caches modules. If the command above doesn't work, try using `hugo mod clean` to clear out the local cache and re-download any modules.
+请注意，在某些情况下，由于Hugo本地缓存模块的方式，此步骤可能会出现问题。如果上述命令不起作用，请尝试使用 `hugo mod clean` 来清除本地缓存并重新下载任何模块。
 
-Once the theme has been upgraded, continue to the [next section](#step-3-theme-configuration).
+一旦主题已经升级，继续到[下一节](#步骤-3-主题配置)。
 
-### Upgrade using git
+### 使用git升级
 
-Git submodules can be upgraded using the `git` command. Simply execute the following command and the latest version of the theme will be downloaded into your local repository:
+可以使用`git`命令升级Git子模块。只需执行以下命令，最新版本的主题将被下载到你的本地存储库中：
 
 ```shell
 git submodule update --remote --merge
 ```
 
-Once the submodule has been upgraded, continue to the [next section](#step-3-theme-configuration).
+一旦子模块升级完成，继续到[下一节](#step-3-theme-configuration)。
 
-### Upgrade manually
+### 手动升级
 
-Updating Congo manually requires you to download the latest copy of the theme and replace the old version in your project.
+手动更新Congo需要下载主题的最新副本，并替换项目中的旧版本。
 
 {{< alert >}}
-Note that any local customisations you have made to the theme files will be lost during this process.
+请注意，在此过程中，您对主题文件所做的任何本地自定义将会丢失。
 {{< /alert >}}
 
-1. Download the latest release of the theme source code.
+1. 下载主题源代码的最新发布。
 
-   {{< button href="https://github.com/jpanther/congo/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
+   {{< button href="https://github.com/jpanther/congo/releases/latest" target="_blank" >}}从Github下载{{< /button >}}
 
-2. Extract the archive, rename the folder to `congo` and move it to the `themes/` directory inside your Hugo project's root folder. You will need to overwrite the existing directory to replace all the theme files.
+2. 解压缩存档，将文件夹重命名为 `congo` 并将其移动到Hugo项目根目录下的 `themes/` 目录。你需要覆盖现有目录以替换所有主题文件。
 
-3. Continue to the [next section](#step-3-theme-configuration).
+3. 继续到[下一节](#step-3-theme-configuration)。
 
-## Step 3: Theme configuration
+## 步骤 3：主题配置
 
-Congo 2.0 introduces a number of new theme configuration parameters. Although the theme will adapt to existing version 1 configurations, in order to take advantage of some of the newer theme features, you will need to adjust your existing configuration.
+Congo 2.0 引入了许多新的主题配置参数。虽然主题会适应现有的版本1配置，但为了利用一些新的主题功能，你需要调整你现有的配置。
 
-The simplest way to do this is to take a copy of the theme's default configuration and compare it to your existing files. The process is outlined in greater detail below.
+最简单的方法是复制主题的默认配置并将其与你的现有文件进行比较。下面详细介绍了这个过程。
 
 ### Languages.toml
 
-In order to provide multilingual support, language-specific theme parameters have been moved to a new config file `languages.[lang-code].toml`. The theme comes with a template `languages.en.toml` file which can be used as a guide.
+为了提供多语言支持，特定于语言的主题参数已移至新的配置文件 `languages.[lang-code].toml`。主题附带一个模板文件 `languages.en.toml`，可作为参考。
 
 {{< alert >}}
-This step is optional if you do not need multilingual support, although completing it now will make future theme upgrades easier.
+如果您不需要多语言支持，此步骤是可选的，但现在完成它将使未来的主题升级更容易。
 {{< /alert >}}
 
-The languages config file follows this structure:
+语言配置文件遵循以下结构：
 
 ```toml
-# config/_default/languages.en.toml
+# config/_default/languagues.en.toml
 
 locale = "en"
 label = "English"
@@ -94,41 +94,39 @@ htmlCode = "en"
 weight = 1
 rtl = false
 
-# Language-specific parameters go here
+# 此处放置特定于语言的参数
 ```
 
-Using your preferred language, simply create this new file in `config/_default/` and then move the language-specific parameters from any existing config files over to this new file. The table below outlines the parameters that need to be moved.
+使用你喜欢的语言，在 `config/_default/` 中创建这个新文件，然后将任何现有配置文件中的特定于语言的参数移到这个新文件中。下表概述了需要移动的参数。
 
-| Parameter     | Old location                 |
-| ------------- | ---------------------------- |
-| `title`       | `config.toml` or `hugo.toml` |
-| `description` | `params.toml`                |
-| `copyright`   | `config.toml` or `hugo.toml` |
-| `dateFormat`  | `params.toml`                |
-| `[author]`    | `config.toml` or `hugo.toml` |
+| 参数          | 旧位置        |
+| ------------- | ------------- |
+| `title`       | `config.toml` |
+| `description` | `params.toml` |
+| `copyright`   | `config.toml` |
+| `dateFormat`  | `params.toml` |
+| `[author]`    | `config.toml` |
 
-Once the values have been moved to the new location, these parameters should be deleted from their original locations.
+一旦值已经移动到新位置，应该从其原始位置删除这些参数。
 
 ### Menus.toml
 
-As the theme is now aware of languages, the `menus.toml` file should also be renamed to include a language code. Rename the existing `menus.toml` to `menus.[lang-code].toml`, where the language code matches the code used in the `languages.toml` file in the previous section.
+由于主题现在支持多语言，`menus.toml` 文件也应该重命名，包含语言代码。将现有的 `menus.toml` 重命名为 `menus.[lang-code].toml`，其中语言代码与前一节中的 `languages.toml` 文件中使用的代码匹配。
 
-### Hugo.toml (formerly Config.toml)
+### Config.toml
 
-The `hugo.toml` file now only contains base Hugo configuration values. Other than removing the language-specific strings above, there are only two changes to consider.
+`config.toml` 文件现在只包含基本的Hugo配置值。除了删除上述特定于语言的字符串之外，只有两个更改需要考虑。
 
-If you're using a language other than English, provide a `defaultContentLanguage` value that matches the language code in the config file you created for your language. Secondly, to take advange of the new site search in Congo 2.0, an `[outputs]` block needs to be provided.
+如果你使用的是英语以外的语言，请提供一个与你为语言创建的配置文件中的语言代码匹配的 `defaultContentLanguage` 值。其次，为了利用Congo 2.0中的新站点搜索，需要提供一个 `[outputs]` 块。
 
 ```toml
-# config/_default/hugo.toml
+# config/_default/config.toml
 
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
+paginate = 10
 summaryLength = 0
-
-[pagination]
-  pagerSize = 10
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -136,9 +134,9 @@ summaryLength = 0
 
 ### Markup.toml
 
-Congo 2.0 adds support for tables of contents on article pages. Although Hugo ships with default settings for generating contents listings, you can adjust this behaviour by adding a new `[tableOfContents]` block to your `markup.toml` file.
+Congo 2.0 添加了对文章页面上目录的支持。尽管Hugo默认提供了生成目录列表的默认设置，你可以通过在 `markup.toml` 文件中添加一个新的 `[tableOfContents]` 块来调整此行为。
 
-The recommended settings are as follows, which includes any headings in the Markdown content at levels 2, 3 and 4:
+建议的设置如下，包括Markdown内容中的任何标题，级别为2、3和4：
 
 ```toml
 # config/_default/markup.toml
@@ -150,51 +148,53 @@ The recommended settings are as follows, which includes any headings in the Mark
 
 ### Params.toml
 
-A number of new theme parameters have been introduced in Congo 2.0. Some minor changes are required to existing configurations. Remember, the theme will always revert to a sensible default if a parameter is not provided.
+Congo 2.0 引入了许多新的主题参数。一些现有配置需要进行一些小的更改。请记住，如果未提供参数，主题将始终恢复为合理的默认值。
 
-The way that dark mode works in Congo has been changed to allow greater flexibility around configuration. The old `darkMode` and `darkToggle` parameters have been **removed and replaced** by three new parameters. These new options operate independently of each other, making it possible to force the appearance while still allowing the user to override.
+Congo中深色模式的工作方式已更改，以提供更大的配置灵活性。旧的 `darkMode` 和 `darkToggle` 参数已被 **删除并替换** 为三个新参数。这些新选项彼此独立操作，使得可以强制外观同时仍然允许用户覆盖。
 
 <!-- prettier-ignore-start -->
-| New parameter | Type | Default | Description |
+| 新参数 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `defaultAppearance` | String | `"light"` | Default theme appearance; either `light` or `dark`.<br>:warning: _Setting this to `light` replicates the old `darkMode = false` setting, while `dark` replicates `darkMode = true`._ |
-| `autoSwitchAppearance` | Boolean | `true` | Whether the theme appearance automatically switches based upon the operating system preference. Set to `false` to force the site to always use the `defaultAppearance`. <br>:warning: _Setting this to `true` replicates the old `darkMode = "auto"` setting._ |
-| `showAppearanceSwitcher` | Boolean | `false` | Whether the theme appearance switcher is displayed in the site footer. <br>:warning: _This parameter replaces `darkToggle`._ |
+| `defaultAppearance` | 字符串 | `"light"` | 默认主题外观；可以是 `light` 或 `dark`。<br>:warning: _将其设置为 `light` 复制了旧的 `darkMode = false` 设置，而 `dark` 复制了 `darkMode = true`。_ |
+| `autoSwitchAppearance` | 布尔值 | `true` | 主题外观是否根据操作系统首选项自动切换。将其设置为 `false` 可始终强制站点使用 `defaultAppearance`。<br>:warning: _将其设置为 `true` 复制了旧的 `darkMode = "auto"` 设置。_ |
+| `showAppearanceSwitcher` | 布尔值 | `false` | 主题外观切换器是否显示在站点页脚中。<br>:warning: _此参数替代了 `darkToggle`。_ |
 <!-- prettier-ignore-end -->
 
-The following table outlines some other key **new parameters** that control new features in version 2:
+以下表格概述了版本2中控制新功能的一些其他关键 **新参数**。
 
-| New parameter                 | Type    | Default |
-| ----------------------------- | ------- | ------- |
-| `enableSearch`                | Boolean | `false` |
-| `showScrollToTop`             | Boolean | `true`  |
-| `article.showTaxonomies`      | Boolean | `false` |
-| `article.showTableOfContents` | Boolean | `false` |
-| `list.showTableOfContents`    | Boolean | `false` |
+| 新
 
-For the full list of supported parameters, refer to the [Configuration]({{< ref "docs/configuration" >}}) docs.
+| 参数                          | 类型   | 默认值  |
+| ----------------------------- | ------ | ------- |
+| `enableSearch`                | 布尔值 | `false` |
+| `showScrollToTop`             | 布尔值 | `true`  |
+| `article.showTaxonomies`      | 布尔值 | `false` |
+| `article.showTableOfContents` | 布尔值 | `false` |
+| `list.showTableOfContents`    | 布尔值 | `false` |
 
-## Step 4: Move assets
+有关支持的所有参数的完整列表，请参阅[配置]({{< ref "docs/configuration" >}})文档。
 
-All site assets, with the exception of favicons, now use Hugo Pipes to build an optimised version of your project. In order for the theme to locate your files, any previously static theme assets need to be moved to the Hugo assets folder. Primarily this is the author image and site logo:
+## 步骤4：移动assets
+
+除了favicon之外，现在所有站点assets都使用Hugo Pipes构建项目的优化版本。为了使主题能够定位你的文件，任何先前的静态主题assets需要移动到Hugo资产文件夹。主要是作者图片和站点标志：
 
 `static/me.jpg` **&rarr;** `assets/me.jpg`
 `static/logo.jpg` **&rarr;** `assets/logo.jpg`
 
-If you have provided an author image or site logo, simply move these assets from `static/` to `assets/`. If you use the same directory structure the theme will know where to find these files automatically. If you would like to provide a new path, update the `logo` and `author.image` config values accordingly.
+如果你提供了作者图片或站点标志，只需将这些资产从 `static/` 移动到 `assets/`。如果使用相同的目录结构，主题将自动知道在哪里找到这些文件。如果想提供新的路径，相应地更新 `logo` 和 `author.image` 配置值。
 
-Note that this step does not apply to any assets in your project that are actually static. For example, a PDF file that you link directly to from within an article is a static asset. These files should remain in the `static/` directory to ensure they are copied to the output folder when Hugo builds the site.
+请注意，此步骤不适用于项目中实际上是静态的任何assets。例如，直接从文章中链接的PDF文件是静态资产。这些文件应保留在 `static/` 目录中，以确保在Hugo构建站点时将它们复制到输出文件夹中。
 
-## Step 5: Check content
+## 步骤5：检查内容
 
-The behavior of the `figure` shortcode is different in version 2. If you are using `figure` in your content and have advanced use cases, you may need to adjust the parameters you are providing.
+版本2中 `figure` 短代码 的行为不同。如果在内容中使用 `figure` 并且有高级用例，可能需要调整提供的参数。
 
-Consult the [shortcode docs]({{< ref "docs/shortcodes#figure" >}}) to learn more about supported parameters.
+查阅[短代码文档]({{< ref "docs/shortcodes#figure" >}})以了解有关支持的参数的更多信息。
 
-## Step 6: Rebuild
+## 步骤6：重新构建
 
-Now that all the configuration changes are complete, it's time to rebuild the site. Run `hugo`, or your build command, and check that everything works as expected.
+现在所有配置更改都已完成，是时候重新构建站点了。运行 `hugo` 或你的构建命令，并检查一切是否按预期工作。
 
-If you come across any errors, check the configuration is correct and refer to the [full documentation]({{< ref "docs" >}}) for further guidance. Remember, the example config files bundled with the theme contain all the default parameters and are a great starting point.
+如果遇到任何错误，请检查配置是否正确，并参考[完整文档]({{< ref "docs" >}})获取进一步的指导。记住，主题捆绑的示例配置文件包含所有默认参数，并且是一个很好的起点。
 
-🙋‍♀️ If you still need help, feel free to ask your question on [GitHub Discussions](https://github.com/jpanther/congo/discussions).
+🙋‍♀️ 如果仍然需要帮助，请随时在[GitHub Discussions](https://github.com/jpanther/congo/discussions)上提问。

@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  ACTIVE_THEME: congo
+  ACTIVE_THEME: hugoplate
 
 jobs:
   build:

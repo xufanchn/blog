@@ -37,7 +37,5 @@ theme = 'PaperMod'
   url = 'https://github.com/xufanchn'
   weight = 3
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    noClasses = false
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -1,0 +1,31 @@
+theme = 'paper'
+
+enableInlineShortcodes = true
+ignoreErrors = ["error-remote-getjson"]
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  color = 'linen'
+  github = 'xufanchn'
+  name = 'xufanchn'
+  bio = '代码 · 运维 · 思考'
+
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "github"
+  name = "GitHub"
+  url = "https://github.com/xufanchn"
+  weight = 30

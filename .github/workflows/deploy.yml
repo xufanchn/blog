@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  ACTIVE_THEME: paper
+  ACTIVE_THEME: stack
 
 jobs:
   build:

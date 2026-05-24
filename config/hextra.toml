@@ -1,0 +1,24 @@
+theme = 'hextra'
+
+[params]
+  description = '代码 · 运维 · 思考'
+
+[[menu.main]]
+  name = '首页'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+  name = '文章'
+  url = '/posts/'
+  weight = 2
+
+[[menu.main]]
+  name = '搜索'
+  url = '/search/'
+  weight = 3
+
+[[menu.main]]
+  name = 'GitHub'
+  url = 'https://github.com/xufanchn'
+  weight = 4

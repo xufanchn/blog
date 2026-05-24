@@ -5,14 +5,42 @@ theme = 'PaperMod'
   author = 'xufanchn'
   defaultTheme = 'auto'
   ShowReadingTime = true
+  ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  ShowFullTextinRSS = true
+  hideSummary = false
+  hideFooter = false
 
   [params.homeInfoParams]
     Title = "xf / blog"
     Content = '代码 · 运维 · 思考 —— 记录技术路上的点滴'
+
+  [params.profileMode]
+    enabled = false
+
+  [params.socialIcons]
+    [params.socialIcons.github]
+      name = 'GitHub'
+      url = 'https://github.com/xufanchn'
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
 
 [[menu.main]]
   name = '首页'
@@ -30,9 +58,18 @@ theme = 'PaperMod'
   weight = 3
 
 [[menu.main]]
+  name = '标签'
+  url = '/tags/'
+  weight = 4
+
+[[menu.main]]
   name = 'GitHub'
   url = 'https://github.com/xufanchn'
-  weight = 4
+  weight = 5
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"

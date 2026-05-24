@@ -11,6 +11,12 @@ ignoreErrors = ["error-remote-getjson"]
   github = 'xufanchn'
   name = 'xufanchn'
   bio = '代码 · 运维 · 思考'
+  copyright = '© 2026 xufanchn'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [[menu.main]]
   identifier = "posts"
@@ -25,7 +31,13 @@ ignoreErrors = ["error-remote-getjson"]
   weight = 20
 
 [[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
   identifier = "github"
   name = "GitHub"
   url = "https://github.com/xufanchn"
-  weight = 30
+  weight = 40

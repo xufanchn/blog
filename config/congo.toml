@@ -72,19 +72,24 @@ summaryLength = 0
   weight = 10
 
 [[menu.main]]
-  name = "Samples"
-  pageRef = "samples"
+  name = "文档"
+  pageRef = "docs"
   weight = 20
 
 [[menu.main]]
-  name = "Docs"
-  pageRef = "docs"
+  name = "示例"
+  pageRef = "samples"
   weight = 30
+
+[[menu.main]]
+  name = "用户"
+  pageRef = "users"
+  weight = 40
 
 [[menu.main]]
   name = "GitHub"
   url = "https://github.com/xufanchn"
-  weight = 40
+  weight = 50
   [menu.main.params]
     icon = "github"
     showName = false

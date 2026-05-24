@@ -10,11 +10,12 @@ summaryLength = 0
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  colorScheme = "congo"
+  colorScheme = "ocean"
   defaultAppearance = "light"
   autoSwitchAppearance = true
   enableSearch = true
   enableCodeCopy = true
+  enableImageLazyLoading = true
 
   [params.header]
     layout = "basic"
@@ -25,12 +26,29 @@ summaryLength = 0
     showThemeAttribution = true
 
   [params.homepage]
-    layout = "page"
+    layout = "profile"
+
+  [params.author]
+    name = "xufanchn"
+    bio = "代码 · 运维 · 思考 —— 记录技术路上的点滴"
+    links = [
+      { github = "https://github.com/xufanchn" },
+    ]
 
   [params.article]
     showDate = true
     showReadingTime = true
     showTableOfContents = true
+    showAuthor = false
+    showWordCount = false
+
+  [params.list]
+    showBreadcrumbs = true
+    showSummary = true
+    showTableOfContents = false
+
+    [params.list.groupByYear]
+      enabled = true
 
 [[menu.main]]
   name = "首页"

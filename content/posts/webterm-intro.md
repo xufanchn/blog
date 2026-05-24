@@ -1,10 +1,12 @@
 ---
-title: 'WebTerm —— 基于 Web 的运维管理工具'
+title: WebTerm —— 基于 Web 的运维管理工具
 date: 2026-05-24
-author: 'xufanchn'
-tags: ['WebTerm', 'SSH', '运维', 'Go', 'React']
-description: 'WebTerm 是一个基于 Web 的 SSH/SFTP/数据库运维管理工具，单二进制部署，浏览器即客户端。'
+author: xufanchn
+tags: [WebTerm, SSH, 运维, Go, React]
+description: WebTerm 是一个基于 Web 的 SSH/SFTP/数据库运维管理工具，单二进制部署，浏览器即客户端。
 ---
+
+# WebTerm —— 基于 Web 的运维管理工具
 
 ## 背景
 

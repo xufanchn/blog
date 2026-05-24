@@ -1,0 +1,43 @@
+baseURL = 'https://xufanchn.github.io/blog-hugo/'
+languageCode = 'zh-CN'
+title = "Xufan's Blog"
+theme = 'PaperMod'
+
+[params]
+  description = '代码 · 运维 · 思考 —— 记录技术路上的点滴'
+  author = 'xufanchn'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = true
+
+  [params.homeInfoParams]
+    Title = "Xufan's Blog"
+    Content = '代码 · 运维 · 思考 —— 记录技术路上的点滴'
+
+  [params.profileMode]
+    enabled = false
+
+[[menu.main]]
+  name = '首页'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+  name = '文章'
+  url = '/posts/'
+  weight = 2
+
+[[menu.main]]
+  name = 'GitHub'
+  url = 'https://github.com/xufanchn'
+  weight = 3
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    noClasses = false

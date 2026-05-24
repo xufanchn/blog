@@ -33,9 +33,8 @@ jobs:
 
       - name: Sync posts from blog-content
         run: |
-          rm -rf content/posts/*
           mkdir -p content/posts
-          cp blog-content/posts/*.md content/posts/
+          rsync -a --delete blog-content/posts/ content/posts/
           rm -rf blog-content
 
       - name: Setup Hugo

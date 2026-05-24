@@ -1,0 +1,15 @@
+theme = 'zen'
+
+[params]
+  description = '代码 · 运维 · 思考'
+  author = 'xufanchn'
+
+[[menu.main]]
+  name = '首页'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+  name = '文章'
+  url = '/posts/'
+  weight = 2
